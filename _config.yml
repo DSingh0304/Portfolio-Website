@@ -1,19 +1,13 @@
 title:              Deep Shekhar Singh
 email:              24318@iiitu.ac.in
-description:        About me
-author:             Start Bootstrap
+description:        Student at IIIT Una || Exploring Android Dev 
+author:             Deep Shekhar Singh
 baseurl:            ""
 url:                "https://deepssingh.me"
 
 # Social Profiles
-twitter_username:   SBootstrap
-github_username:    StartBootstrap
-facebook_username:  StartBootstrap
-instagram_username:  
-linkedin_username:
-
-# Add your google-analytics ID here to activate google analytics
-google_analytics:   UA-XXXXXXXXX-X # out your google-analytics code
+github_username:    DSingh0304  
+linkedin_username: deepshekharsingh
 
 # Build settings
 markdown:           kramdown
