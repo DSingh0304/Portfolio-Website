@@ -17,6 +17,19 @@
       .font-staat {
         font-family: "Staatliches", sans-serif;
       }
+
+      .rotate-y {
+        animation: rotateY 3s linear infinite;
+      }
+
+      @keyframes rotateY {
+        from {
+          transform: rotateY(0deg);
+        }
+        to {
+          transform: rotateY(360deg);
+        }
+      }
     </style>
     <script
       src="https://kit.fontawesome.com/c499e2e88a.js"
@@ -32,11 +45,13 @@
       <div class="flex w-2/3">
         <div class="m-4 font-staat">DEEP SHEKHAR SINGH</div>
         <div>
-          <button
-            class="bg-zinc-800 border-white border-2 font-staat text-2xl text-white m-3 p-1 hover:bg-green-400 hover:text-black"
-          >
-            GET IN TOUCH <i class="fa-solid fa-chevron-right"></i>
-          </button>
+          <a href="#contact">
+            <button
+              class="bg-zinc-800 border-white border-2 font-staat text-2xl text-white m-3 p-1 hover:bg-green-400 hover:text-black"
+            >
+              GET IN TOUCH <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </a>
         </div>
       </div>
       <div class="m-4 text-right w-1/3 font-staat"><a href="">Home</a></div>
@@ -65,16 +80,22 @@
         <div
           class="flex flex-col items-center md:flex-row md:items-start md:justify-start"
         >
-          <button
-            class="bg-green-400 text-black m-4 border-2 border-white p-2 hover:bg-gray-200"
+          <a href="#contact">
+            <button
+              class="bg-green-400 text-black m-4 border-2 border-white p-2 hover:bg-gray-200"
+            >
+              Get In Touch <i class="fa-regular fa-share-from-square"></i>
+            </button>
+          </a>
+          <a
+            target="_blank"
+            href="https://drive.google.com/file/d/13t-1zbmyktKExQd7lSTUU5FSJqMH8YGk/view?usp=drive_link"
           >
-            Get In Touch <i class="fa-regular fa-share-from-square"></i>
-          </button>
-          <button
-            class="bg-gray-800 text-white m-4 border-2 border-white p-2 hover:bg-gray-200 hover:text-black"
-          >
-            Download Resume <i class="fa-solid fa-download"></i>
-          </button>
+            <button
+              class="bg-gray-800 text-white m-4 border-2 border-white p-2 hover:bg-gray-200 hover:text-black"
+            >
+              Download Resume <i class="fa-solid fa-download"></i></button
+          ></a>
         </div>
       </div>
     </div>
@@ -139,18 +160,30 @@
             class="flex justify-center md:justify-start text-center md:text-left my-2"
           >
             <p class="w-2/3">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
-              distinctio ut nulla, accusamus maiores repellat assumenda
-              quibusdam totam quidem excepturi earum enim, eveniet voluptatibus
-              repudiandae laboriosam autem sunt? Odit, eligendi!
+              I'm Deep Shekhar Singh, a passionate and highly motivated
+              individual currently pursuing B.Tech in Information Technology at
+              IIIT Una. With a strong foundation in programming, web
+              development, and electronics, I am driven by the desire to
+              innovate and build impactful solutions. My interests range from
+              full-stack development to embedded systems and open-source
+              contributions. I love working on projects that challenge me and
+              help me grow, both technically and personally. I'm always eager to
+              learn, collaborate, and contribute meaningfully to the tech
+              community.
             </p>
           </div>
           <div class="flex justify-center md:justify-start">
-            <button
-              class="bg-gray-800 text-white my-4 border-2 border-white p-2 hover:bg-gray-200 hover:text-black text-xl"
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/deepshekharsingh/"
             >
-              LinkedIn<i class="p-2 fa-solid fa-up-right-from-square"></i>
-            </button>
+              <button
+                class="bg-gray-800 text-white my-4 border-2 border-white p-2 hover:bg-gray-200 hover:text-black text-xl"
+              >
+                LinkedIn<i
+                  class="p-2 fa-solid fa-up-right-from-square"
+                ></i></button
+            ></a>
           </div>
         </div>
       </div>
@@ -209,23 +242,41 @@
           </svg>
         </div>
         <div class="w-full flex-col md:justify-start md:mx-20">
-          <div class="flex justify-center md:justify-start">
-            <h3 class="font-bold md:my-2 my-2">Frontend Developer</h3>
-          </div>
           <div
             class="flex justify-center md:justify-start text-center md:text-left my-2"
           >
-            <p class="w-2/3">
-              React, JavaScript, TypeScript, Tailwind CSS, HTML5, CSS3, Node.js,
-              Express.js, MongoDB
-            </p>
+            <ul class="w-2/3 list-disc ml-6">
+              <li>
+                <span class="font-bold">Languages:</span> Python, C/C++, Java,
+                JavaScript
+              </li>
+              <li>
+                <span class="font-bold">Web Development:</span>HTML5, CSS3, PHP,
+                JavaScript, MERN Stack
+              </li>
+              <li>
+                <span class="font-bold">Mobile Development:</span>Java, Android
+                Studio
+              </li>
+              <li>
+                <span class="font-bold">Tools & Technologies:</span>Git, GitHub,
+                Linux, Open Source Software
+              </li>
+              <li>
+                <span class="font-bold">Other Domains:</span> Electronics, RC
+                Cars, IoT Prototyping
+              </li>
+            </ul>
           </div>
           <div class="flex justify-center md:justify-start">
-            <button
-              class="bg-gray-800 text-white my-4 border-2 border-white p-2 hover:bg-gray-200 hover:text-black text-xl"
-            >
-              GitHub<i class="p-2 fa-solid fa-up-right-from-square"></i>
-            </button>
+            <a href="https://github.com/DSingh0304" target="_blank">
+              <button
+                class="bg-gray-800 text-white my-4 border-2 border-white p-2 hover:bg-gray-200 hover:text-black text-xl"
+              >
+                GitHub<i
+                  class="p-2 fa-solid fa-up-right-from-square"
+                ></i></button
+            ></a>
           </div>
         </div>
       </div>
@@ -285,134 +336,217 @@
           </svg>
         </div>
         <div class="w-full flex-col md:justify-start md:mx-20">
-          <div class="flex justify-center md:justify-start">
-            <h3 class="font-bold md:my-2 my-2">Junior Developer</h3>
-          </div>
           <div
             class="flex justify-center md:justify-start text-center md:text-left my-2"
           >
-            <p class="w-2/3">
-              Developing web applications using modern technologies and
-              collaborating with cross-functional teams to deliver high-quality
-              solutions.
-            </p>
+            <ol class="w-2/3 list-decimal ml-6">
+              <li>
+                <span class="font-bold"
+                  >Web Development Intern – IIT Mandi</span
+                >
+              </li>
+              <ul class="list-disc">
+                <p class="italic">Dec 2024 – Jan 2025</p>
+                <li>
+                  Worked under the guidance of Prof. Varun Dutt and Premchand
+                  Gat
+                </li>
+                <li>Revamped and enhanced the UI for the ACS Lab website</li>
+                <li>
+                  Also developed a WordPress website for the C3DAR Lab at IIT
+                  Mandi
+                </li>
+                <li>
+                  Gained valuable mentorship and practical exposure to frontend
+                  and content management tools
+                </li>
+              </ul>
+
+              <li>
+                <span class="font-bold"
+                  >Member – AAVESH, Technical Club of IIIT Una</span
+                >
+              </li>
+              <ul class="list-disc">
+                <p class="italic">Sept 2025 – Present</p>
+                <li>Active contributor to the club’s tech initiatives</li>
+                <li>
+                  Participated in electronics, robotics, and embedded tech
+                  activities
+                </li>
+                <li>
+                  Certified in RC Car Building and Drone Technology through
+                  various club and external workshops
+                </li>
+              </ul>
+            </ol>
           </div>
+
           <div class="flex justify-center md:justify-start">
-            <button
-              class="bg-gray-800 text-white my-4 border-2 border-white p-2 hover:bg-gray-200 hover:text-black text-xl"
+            <a
+              target="_blank"
+              href="https://drive.google.com/file/d/13t-1zbmyktKExQd7lSTUU5FSJqMH8YGk/view?usp=drive_link"
             >
-              Resume<i class="p-2 fa-solid fa-up-right-from-square"></i>
-            </button>
+              <button
+                class="bg-gray-800 text-white my-4 border-2 border-white p-2 hover:bg-gray-200 hover:text-black text-xl"
+              >
+                Resume<i
+                  class="p-2 fa-solid fa-up-right-from-square"
+                ></i></button
+            ></a>
           </div>
         </div>
       </div>
     </div>
     <!-- Body-4 -->
-    <div class="top-0 z-10 bg-zinc-800">
-      <div class="flex-col">
-        <div class="flex justify-center md:justify-start">
-          <h2
-            class="font-staat text-2xl sm:text-2xl md:text-4xl lg:text-5xl md:mx-20 md:my-10"
-          >
-            PROJECTS
-          </h2>
-        </div>
-        <div
-          class="hover:cursor-pointer text-black flex flex-col md:flex-row gap-6 p-4"
+    <div class="flex-col sticky top-0 z-50 bg-zinc-800">
+      <div class="flex justify-center md:justify-start">
+        <h2
+          class="font-staat text-2xl sm:text-2xl md:text-4xl lg:text-5xl md:mx-20 md:my-10"
         >
-          <div
-            class="bg-emerald-300 shadow-lg shadow-emerald-800 m-4 w-full md:w-1/3 rounded-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:rotate-1 hover:shadow-2xl hover:shadow-emerald-900 hover:bg-emerald-400 overflow-hidden"
-          >
-            <div class="p-6">
-              <h1
-                class="font-press text-5xl mb-6 transition-all duration-300 hover:text-emerald-800"
-              >
-                %
-              </h1>
-              <h1
-                class="font-staat text-3xl mb-4 transition-colors duration-300"
-              >
-                Project Name
-              </h1>
-              <p class="font-staat text-lg mb-6 leading-relaxed">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quos
-                ipsa commodi quibusdam, corrupti odio aliquam consequuntur sequi
-                odit aspernatur placeat incidunt fugit quo vitae perspiciatis
-                eius, quod blanditiis harum! Fuga.
-              </p>
-              <h3
-                class="font-staat text-xl transition-all duration-300 hover:translate-x-2"
-              >
-                <a href="" class="hover:text-emerald-800">More Info ></a>
-              </h3>
-            </div>
+          PROJECTS
+        </h2>
+      </div>
+      <div
+        class="hover:cursor-pointer text-black flex flex-col md:flex-row gap-6 p-4"
+      >
+        <div
+          class="bg-emerald-300 shadow-lg shadow-emerald-800 m-4 w-full md:w-1/3 rounded-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:rotate-1 hover:shadow-2xl hover:shadow-emerald-900 hover:bg-emerald-400 overflow-hidden"
+        >
+          <div class="p-6">
+            <h1
+              class="font-press text-5xl mb-6 transition-all duration-300 hover:text-emerald-800"
+            >
+              %
+            </h1>
+            <h1 class="font-staat text-3xl mb-4 transition-colors duration-300">
+              FarmSync
+            </h1>
+            <p class="font-staat text-lg mb-6 leading-relaxed">
+              A hackathon project connecting farmers and restaurants for direct
+              trade, eliminating middlemen. Built using modern frontend
+              technologies
+            </p>
+            <h3
+              class="font-staat text-xl transition-all duration-300 hover:translate-x-2"
+            >
+              <a href="" class="hover:text-emerald-800">More Info ></a>
+            </h3>
           </div>
+        </div>
 
-          <div
-            class="bg-[#ff6b6b] shadow-lg shadow-red-800 m-4 w-full md:w-1/3 rounded-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:-rotate-1 hover:shadow-2xl hover:shadow-red-900 hover:bg-[#ff5252] overflow-hidden"
-          >
-            <div class="p-6">
-              <h1
-                class="font-press text-5xl mb-6 transition-all duration-300 hover:text-red-800 text-white"
-              >
-                @
-              </h1>
-              <h1
-                class="font-staat text-3xl mb-4 transition-colors duration-300 text-white"
-              >
-                Second Project
-              </h1>
-              <p class="font-staat text-lg mb-6 leading-relaxed text-white">
-                Another amazing project with modern technologies and creative
-                solutions for complex problems.
-              </p>
-              <h3
-                class="font-staat text-xl transition-all duration-300 hover:translate-x-2 text-white"
-              >
-                <a href="" class="hover:text-red-200">More Info ></a>
-              </h3>
-            </div>
+        <div
+          class="bg-[#ff6b6b] shadow-lg shadow-red-800 m-4 w-full md:w-1/3 rounded-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:-rotate-1 hover:shadow-2xl hover:shadow-red-900 hover:bg-[#ff5252] overflow-hidden"
+        >
+          <div class="p-6">
+            <h1
+              class="font-press text-5xl mb-6 transition-all duration-300 hover:text-red-800 text-white"
+            >
+              @
+            </h1>
+            <h1
+              class="font-staat text-3xl mb-4 transition-colors duration-300 text-white"
+            >
+              Android Projects
+            </h1>
+            <p class="font-staat text-lg mb-6 leading-relaxed text-white">
+              Created functional Android apps like a Calculator and a Music
+              Player using Java and Android Studio
+            </p>
+            <h3
+              class="font-staat text-xl transition-all duration-300 hover:translate-x-2 text-white"
+            >
+              <a href="" class="hover:text-red-200">More Info ></a>
+            </h3>
           </div>
+        </div>
 
-          <div
-            class="bg-[#4ecdc4] shadow-lg shadow-teal-800 m-4 w-full md:w-1/3 rounded-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:rotate-1 hover:shadow-2xl hover:shadow-teal-900 hover:bg-[#45b7d1] overflow-hidden"
-          >
-            <div class="p-6">
-              <h1
-                class="font-press text-5xl mb-6 transition-all duration-300 hover:text-teal-800 text-white"
-              >
-                #
-              </h1>
-              <h1
-                class="font-staat text-3xl mb-4 transition-colors duration-300 text-white"
-              >
-                Third Project
-              </h1>
-              <p class="font-staat text-lg mb-6 leading-relaxed text-white">
-                Innovative web application built with cutting-edge frameworks
-                and responsive design principles.
-              </p>
-              <h3
-                class="font-staat text-xl transition-all duration-300 hover:translate-x-2 text-white"
-              >
-                <a href="" class="hover:text-teal-200">More Info ></a>
-              </h3>
-            </div>
+        <div
+          class="bg-[#4ecdc4] shadow-lg shadow-teal-800 m-4 w-full md:w-1/3 rounded-lg transform transition-all duration-300 ease-in-out hover:scale-105 hover:rotate-1 hover:shadow-2xl hover:shadow-teal-900 hover:bg-[#45b7d1] overflow-hidden"
+        >
+          <div class="p-6">
+            <h1
+              class="font-press text-5xl mb-6 transition-all duration-300 hover:text-teal-800 text-white"
+            >
+              #
+            </h1>
+            <h1
+              class="font-staat text-3xl mb-4 transition-colors duration-300 text-white"
+            >
+              Electronics
+            </h1>
+            <p class="font-staat text-lg mb-6 leading-relaxed text-white">
+              Constructed an RC car and secured 1st prize in Robo Soccer event
+            </p>
+
+            <h3
+              class="font-staat text-xl transition-all duration-300 hover:translate-x-2 text-white"
+            >
+              <a href="" class="hover:text-teal-200">More Info ></a>
+            </h3>
           </div>
         </div>
       </div>
     </div>
-    <!-- Constact Us Section -->
-    <section>
-      <div class="flex justify-center md:justify-start">
+    <!-- Contact Us Section -->
+    <section
+      id="contact"
+      class="w-full bg-zinc-800 py-10 sticky top-0 z-40 bg-zinc-800"
+    >
+      <div
+        class="flex flex-col md:flex-row justify-center md:justify-start items-center md:items-start"
+      >
         <h2
           class="font-staat text-2xl sm:text-2xl md:text-4xl lg:text-5xl md:mx-20 md:my-10"
         >
           Let's Work Together
         </h2>
-        <div>
-          
-        </div>
+        <svg
+          class="md:mx-5 my-5 md:my-10 rotate-y"
+          preserveAspectRatio="xMidYMid meet"
+          data-bbox="5 5.5 14 14"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="5 5.5 14 14"
+          height="36"
+          width="36"
+          data-type="color"
+          role="presentation"
+          aria-hidden="true"
+          aria-label=""
+        >
+          <g>
+            <path
+              fill="#00FFA3"
+              d="M7 19.5v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v-1h1v6h2v-10H9v2h6v1h-1v1h-1v1h-1v1h-1v1h-1v1H9v1H8v1H7v1H6v1H5v2z"
+              data-color="1"
+            ></path>
+          </g>
+        </svg>
+      </div>
+      <div class="m-10 md:mx-20 md:my-10 w-1/3">
+        <ul>
+          <li>
+            <i class="fa-solid fa-phone"></i>
+            <span class="font-bold m-2">Phone:</span> 8840125626
+          </li>
+          <li>
+            <i class="fa-solid fa-envelope"></i
+            ><span class="font-bold m-2">Email:</span> 24318@iiitu.ac.in
+          </li>
+          <li>
+            <i class="fa-solid fa-globe"></i
+            ><span class="font-bold m-2">Website:</span>http://deepssingh.me/
+          </li>
+          <li>
+            <i class="fa-solid fa-laptop"></i
+            ><span class="font-bold m-2">Github:</span>DSingh0304
+          </li>
+          <li>
+            <i class="fa-solid fa-location-dot"></i
+            ><span class="font-bold m-2">Location:</span>Lucknow, Uttar Pradesh,
+            India
+          </li>
+        </ul>
       </div>
     </section>
   </body>
