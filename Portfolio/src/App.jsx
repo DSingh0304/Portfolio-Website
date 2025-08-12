@@ -304,7 +304,7 @@ function App() {
               <div class="md:w-1/2 text-center md:text-left">
                 <h2 class="text-2xl md:text-3xl font-bold text-white">
                   <span class="text-purple">#about-me</span>
-                  <span class="text-purple mx-4">------------------------</span>
+                  <span class="text-purple mx-4">---------------------</span>
                 </h2>
                 <div class="my-4">
                   <p class="text-gray-400 mb-6">Hello, I'm Elias!</p>
@@ -336,14 +336,14 @@ function App() {
                     class="absolute bottom-2 right-2"
                   />
                 </div>
-                <div class="relative w-72 h-72">
+                <div class="relative w-72 h-72 z-10">
                   <img
                     src="./public/Deep.webp"
                     alt="A profile picture of Elias"
                     class="rounded-lg shadow-lg hover:scale-110 hover:cursor-pointer"
                   />
                 </div>
-                <div class="relative w-72 h-72">
+                <div class="relative w-72 h-72 ">
                   <img src="./public/prop-4.webp" alt="prop" class="" />
                 </div>
               </div>
@@ -361,7 +361,7 @@ function App() {
                     <h2 class="text-2xl md:text-3xl font-bold text-white">
                       <span class="text-purple">#contacts</span>
                       <span class="text-purple mx-4">
-                        ------------------------
+                        ----------------------
                       </span>
                     </h2>
                     <p class="my-4 text-gray-400 mb-6 max-w-md mx-auto md:mx-0">
