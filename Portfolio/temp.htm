@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -78,7 +78,7 @@
       }
     </style>
   </head>
-  <body class="text-gray-300">
+  <body class="text-gray-300 overflow-x-hidden">
     <!-- Header -->
     <header class="py-6">
       <div class="container flex justify-between items-center">
@@ -126,7 +126,7 @@
         <!-- Left side - Text Content -->
 
         <div class="md:w-1/2 text-center md:text-left">
-          <div class="ml-20">
+          <div class="ml-4 md:ml-8">
             <h1
               class="text-4xl lg:text-5xl font-bold text-white leading-tight mb-4"
             >
@@ -146,24 +146,24 @@
         </div>
         <!-- Right side - Image -->
         <div
-          class="md:w-1/2 flex justify-center md:justify-start relative z-10"
+          class="md:w-1/2 flex justify-center md:justify-start relative z-10 overflow-hidden"
         >
-          <div class="relative w-72 h-72 relative">
+          <div class="relative w-72 h-72">
             <img
               src="./public/prop-1.webp"
               alt="prop"
-              class="absolute bottom-2 right-2"
+              class="absolute bottom-2 right-2 max-w-full"
             />
           </div>
           <div class="relative w-72 h-72">
             <img
               src="./public/Deep.webp"
               alt="A profile picture of Elias"
-              class="rounded-lg shadow-lg hover:scale-110 hover:cursor-pointer"
+              class="rounded-lg shadow-lg hover:scale-110 hover:cursor-pointer max-w-full"
             />
           </div>
           <div class="relative w-72 h-72">
-            <img src="./public/prop-2.webp" alt="prop" class="" />
+            <img src="./public/prop-2.webp" alt="prop" class="max-w-full" />
           </div>
         </div>
       </div>
@@ -190,7 +190,7 @@
           <img
             src="./public/prop-3.webp"
             alt=""
-            class="absolute scale-150 right-0"
+            class="absolute scale-125 right-0 max-w-none"
           />
         </div>
       </div>
@@ -376,7 +376,7 @@
           <h2 class="text-2xl md:text-3xl font-bold text-white">
               <span class="text-purple">#about-me</span
               ><span class="text-purple mx-4"
-                >------------------------</span
+                >-------------------</span
               >
             </h2>
             <div class="my-4">
