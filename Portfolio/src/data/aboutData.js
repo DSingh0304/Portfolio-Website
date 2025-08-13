@@ -1,4 +1,4 @@
-import { profile, prop1, prop2 } from "../assets/index.js";
+import { profile2, prop1, prop2 } from "../assets/index.js";
 
 export const about = {
   id: "about-me",
@@ -32,5 +32,5 @@ export const about = {
       decorative: true,
     },
   ],
-  imageMap: { prop1, profile, prop2 },
+  imageMap: { prop1, profile2, prop2 },
 };

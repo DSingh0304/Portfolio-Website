@@ -20,7 +20,7 @@ const ContactMe = () => {
                 </p>
               </div>
               <div className="md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left">
-                <div className="border-2 border-gray-700 p-6  inline-block">
+                <div className="border-2 bdr border-gray-700 p-6  inline-block">
                   <h3 className="text-xl font-bold text-white mb-4">
                     {data.message}
                   </h3>

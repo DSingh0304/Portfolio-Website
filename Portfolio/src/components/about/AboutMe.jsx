@@ -29,24 +29,24 @@ const AboutMe = () => {
             </div>
           </div>
           <div className="md:w-1/2 flex justify-center md:justify-start relative z-10">
-                      <div className="relative w-72 h-72 relative">
-                        <img
-                          src={data.imageMap.prop1}
-                          alt="Dotted Design"
-                          className="absolute bottom-2 right-2"
-                        ></img>
-                      </div>
-                      <div className="relative w-72 h-72">
-                        <img
-                          src={data.imageMap.profile}
-                          alt="A profile picture of Deep"
-                          className="rounded-lg shadow-lg hover:scale-110 hover:cursor-pointer"
-                        ></img>
-                      </div>
-                      <div className="relative w-72 h-72">
-                        <img src={data.imageMap.prop2} alt="Logo With Bg Removed" className="" ></img>
-                      </div>
-                    </div>
+            <div className="relative w-72 mx-2 h-72 relative">
+              <img
+                src={data.imageMap.prop1}
+                alt="Dotted Design"
+                className="absolute bottom-2 right-2"
+              ></img>
+            </div>
+            <div className="relative w-72 h-72">
+              <img
+                src={data.imageMap.profile2}
+                alt="A profile picture of Deep"
+                className=" rounded-lg shadow-lg scale-130 hover:scale-140 hover:cursor-pointer"
+              ></img>
+            </div>
+            <div className="relative mx-2 w-72 h-72">
+              <img src={data.imageMap.prop2} alt="Logo With Bg Removed" className="" ></img>
+            </div>
+          </div>
         </div>
       </section>
     </>
