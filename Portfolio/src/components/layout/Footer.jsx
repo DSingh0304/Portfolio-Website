@@ -1,3 +1,5 @@
+import logo from "../../assets/Logo.webp"
+
 const Footer = () => {
   return (
     <>
@@ -8,11 +10,7 @@ const Footer = () => {
               href="#"
               className="flex items-center space-x-2 text-white text-xl font-bold"
             >
-              <img
-                src="./public/Logo.webp
-                "
-                alt=""
-              />
+              <img src={logo} alt="LOGO"></img>
               <span>Deep</span>
             </a>
             <p className="text-gray-500 text-sm mt-2">

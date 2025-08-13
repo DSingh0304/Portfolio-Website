@@ -1,3 +1,5 @@
+import logo from "../../assets/Logo.webp"
+
 const Header = () => {
   return (
     <>
@@ -8,10 +10,9 @@ const Header = () => {
             className="flex items-center space-x-2 text-white text-xl font-bold"
           >
             <img
-              src="./public/Logo.webp
-                "
-              alt=""
-            />
+              src={logo}
+              alt="LOGO"
+            ></img>
             <span>Deep</span>
           </a>
           <nav className="hidden md:flex space-x-8 text-md font-semibold">
