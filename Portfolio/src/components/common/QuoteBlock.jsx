@@ -1,4 +1,4 @@
-const Quote = () => {
+const QuoteBlock = () => {
   return (
     <>
       <section className="py-16 md:py-24 relative">
@@ -22,4 +22,4 @@ const Quote = () => {
   );
 };
 
-export default Quote;
+export default QuoteBlock;

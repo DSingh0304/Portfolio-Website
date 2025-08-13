@@ -6,7 +6,7 @@ const Hero = () => {
           <div className="md:w-1/2 text-center md:text-left">
             <div className="ml-20">
               <h1 className="text-4xl lg:text-5xl font-bold text-white leading-tight mb-4">
-                Deep is a<span className="text-purple">software developer</span>{" "}
+                Deep is a <span className="text-purple">software developer</span>{" "}
                 and
                 <br />
                 <span className="text-purple">ML enthusiast</span>
