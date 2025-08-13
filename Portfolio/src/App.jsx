@@ -5,8 +5,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <>
-     
-     <Header/>
+      <Header />
 
       <main className="py-16 md:py-24">
         <div className="container flex flex-col-reverse md:flex-row items-center justify-between gap-12 relative">
@@ -65,26 +64,11 @@ function App() {
               </div>
             </div>
           </div>
-
-          <div>
-            <img
-              src="./public/prop-3.webp"
-              alt=""
-              className="absolute scale-150 right-0"
-            />
-          </div>
         </div>
       </section>
 
       <section id="projects" className="py-16 md:py-24">
         <div className="container flex-row">
-          <div>
-            <img
-              src="./public/prop-1.webp"
-              alt=""
-              className="absolute scale-150 right-0 my-72"
-            />
-          </div>
           <div>
             <div className="flex justify-between items-center mb-10">
               <h2 className="text-2xl md:text-3xl font-bold text-white">
@@ -185,9 +169,6 @@ function App() {
 
       <section id="skills" className="py-16 md:py-24">
         <div className="container">
-          <div className="absolute left-0 my-24">
-            <img src="./public/prop-2.webp" alt="prop" className="" />
-          </div>
           <div>
             <h2 className=" my-4 text-2xl md:text-3xl font-bold text-white">
               <span className="text-purple">#skills</span>
@@ -300,9 +281,6 @@ function App() {
 
       <section id="contacts" className="py-16 md:py-24">
         <div className="container">
-          <div className="absolute right-0 scale-150">
-            <img src="./public/prop-5.webp" alt="prop" className="" />
-          </div>
           <div>
             <div className="flex flex-col md:flex-row items-center md:items-start gap-12">
               <div className="md:w-1/2 text-center md:text-left">
@@ -373,8 +351,7 @@ function App() {
       </section>
 
       <hr></hr>
-     <Footer/>
-     
+      <Footer />
     </>
   );
 }
