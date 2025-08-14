@@ -18,7 +18,7 @@ const ContactMe = () => {
             <h3 className="text-white font-semibold mb-4">{data.message}</h3>
             <div className="flex items-center space-x-4">
              <MdEmail />
-              <span className=" text-hover hover:cursor-pointer text-gray-400">{data.email}</span>
+             <span className=" text-hover hover:cursor-pointer text-gray-400">{data.email}</span>
             </div>
             <div className="flex items-center space-x-4 mt-2">
               <FaPhoneAlt />

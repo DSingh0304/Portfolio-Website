@@ -1,7 +1,7 @@
 import { about } from "../../data/aboutData";
 import Section from "../common/Section";
 
-const AboutMe = () => {
+const AboutMe = ({ variant = "about" }) => {
   const data = about;
   return (
     <>
@@ -10,12 +10,18 @@ const AboutMe = () => {
           <p className="text-gray-400 mb-6">{data.intro}</p>
           <p className="text-gray-400 mb-4">{data.desc1}</p>
           <p className="text-gray-400 mb-8">{data.desc2}</p>
-          <a
-            href={data.cta.to}
-            className="px-6 py-3 border border-purple hover:text-white transition-colors font-semibold"
-          >
-            {data.cta.label} -{">"}{" "}
-          </a>
+          {variant == "about" && (
+           <p className="text-gray-400 mb-8">{data.desc3}</p>
+          )}
+          
+          {variant == "home" && (
+            <a
+              href={data.cta.to}
+              className="px-6 py-3 border border-purple hover:text-white transition-colors font-semibold"
+            >
+              {data.cta.label} -{">"}{" "}
+            </a>
+          )}
         </div>
         <div className="md:w-1/2 flex justify-center md:justify-start relative z-10">
           <div className="relative w-72 mx-2 h-72 relative">

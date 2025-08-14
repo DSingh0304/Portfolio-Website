@@ -1,27 +1,38 @@
-import { createBrowserRouter , RouterProvider } from "react-router-dom";
+import { useState, useEffect } from "react";
+import WebsiteLoader from "./components/ui/WebsiteLoader";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./components/layout/RootLayout";
 import HomePage from "./pages/HomePage";
 import ProjectsPage from "./pages/ProjectsPage";
 import AboutPage from "./pages/AboutPage";
 import ContactPage from "./pages/ContactPage";
-import NotFoundPage from "./pages/NotFoundPage"
+import NotFoundPage from "./pages/NotFoundPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <RootLayout/>,
-    errorElement: <NotFoundPage/>,
+    element: <RootLayout />,
+    errorElement: <NotFoundPage />,
     children: [
-      { index: true , element: <HomePage /> },
-      { path: "projects" , element: <ProjectsPage /> },
-      { path: "about" , element: <AboutPage /> },
-      { path: "contacts" , element: <ContactPage /> },
+      { index: true, element: <HomePage /> },
+      { path: "projects", element: <ProjectsPage /> },
+      { path: "about", element: <AboutPage /> },
+      { path: "contacts", element: <ContactPage /> },
     ],
   },
-])
+]);
 
 function App() {
-  return <RouterProvider router={router} /> ;
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1200);
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <WebsiteLoader />;
+
+  return <RouterProvider router={router} />;
 }
 
 export default App;

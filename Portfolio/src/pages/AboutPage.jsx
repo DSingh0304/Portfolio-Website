@@ -5,7 +5,7 @@ import MyFunFacts from "../components/common/MyFunFacts";
 const AboutPage = () => {
   return (
     <>
-      <AboutMe />
+      <AboutMe variant="about" />
       <SkillsGroup />
       <MyFunFacts />
     </>

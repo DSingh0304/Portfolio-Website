@@ -10,8 +10,8 @@ export const heroData = {
     ],
     subText: "He crafts responsive websites where technologies meet creativity.",
     cta: {
-        label:"Contact me!!",
-        to: "#contact"
+        label:"Contact Him -->",
+        to: "/contacts"
     },
     images: [
         {

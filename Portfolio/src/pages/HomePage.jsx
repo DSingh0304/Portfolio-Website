@@ -12,7 +12,7 @@ const HomePage = () =>  {
       <QuoteBlock />
       <ProjectSection variant="home" limit={3} showFeaturedOnly={true} title="projects" />
       <SkillsGroup />
-      <AboutMe />
+      <AboutMe  variant = "home" />
       <ContactMe />
     </>
 }
