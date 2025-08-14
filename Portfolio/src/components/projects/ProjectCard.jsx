@@ -35,7 +35,7 @@ const ProjectCard = ({ project }) => {
             <a
               href={repoUrl}
               target="_blank"
-              className="text-sm px-4 py-2 border text-purple border-purple hover:text-white transition-colors"
+              className="text-sm px-4 py-2 border  border-purple hover:text-white transition-colors"
             >
               Repo {">>"}
             </a>

@@ -13,6 +13,7 @@ const ContactMe = () => {
         <div className="md:w-1/2">
           <p className="text-gray-400">{data.text}</p>
         </div>
+        
         <div className="md:w-1/2 flex justify-center ">
           <div className="border bdr border-gray-500 p-4">
             <h3 className="text-white font-semibold mb-4">{data.message}</h3>

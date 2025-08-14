@@ -1,6 +1,7 @@
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
+import { FaInstagramSquare } from "react-icons/fa";
 
 import logo from "/Logo.webp";
 import { Link } from "react-router-dom";
@@ -50,6 +51,13 @@ const Footer = () => {
                 className=" text-2xl   text-gray-400 hover:text-white transition-colors"
               >
                <FaSquareXTwitter />
+              </a>
+              <a
+                href="https://www.instagram.com/_deep_3.0_/"
+                target="_blank"
+                className=" text-2xl   text-gray-400 hover:text-white transition-colors"
+              >
+               <FaInstagramSquare />
               </a>
             </div>
           </div>

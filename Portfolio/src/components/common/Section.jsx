@@ -3,10 +3,13 @@ const Section = ({ id, title, ftoggle = false, children }) => {
     <section id={id} className="py-16 md:py-24">
       <div className="container">
         {title && (
-          <h2 className="text-2xl md:text-3xl font-bold text-white mb-5">
-            <span className="text-purple">#</span> {title}
-            <span className="text-purple mx-4">------------------------</span>
-          </h2>
+          <div className="flex items-center justify-between mb-5">
+            <h2 className="text-2xl md:text-3xl font-bold text-white">
+              <span className="text-purple">#</span> {title}
+              <span className="text-purple mx-4">------------------------</span>
+            </h2>
+            
+          </div>
         )}
         <div
           className={

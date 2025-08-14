@@ -43,6 +43,16 @@ const ProjectSection = ({
             <ProjectCard key={p.id} project={p} />
           ))}
         </div>
+        {variant === "home" && (
+          <div className="flex justify-start mt-6">
+            <a
+              href="/projects"
+              className="px-6 my-6 py-2 border border-purple  font-semibold rounded hover:bg-purple hover:text-white transition-colors"
+            >
+              View all &rarr;
+            </a>
+          </div>
+        )}
         {variant === "projects" && (
           <>
             <h2 className="text-2xl my-10 md:text-3xl font-bold text-white mb-10 text-right">
