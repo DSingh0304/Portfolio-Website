@@ -1,8 +1,11 @@
 import ProjectSection from "../components/projects/ProjectSection";
 
 const ProjectsPage = () => {
-
-    return <ProjectSection />;
+  return (
+    <>
+      <ProjectSection variant="projects" />
+    </>
+  );
 };
 
 export default ProjectsPage;

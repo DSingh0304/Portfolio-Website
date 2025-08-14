@@ -1,7 +1,7 @@
 export const skills = [
   {
     id: "1",
-    title: "Laguages",
+    title: "Languages",
     content: ["TypeScript", "Lua", "Python", "JavaScript"],
   },
   {

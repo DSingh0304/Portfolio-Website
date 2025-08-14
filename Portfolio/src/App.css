@@ -56,4 +56,5 @@ body {
 }
 .text-hover:hover {
   color: var(--color-accent);
+  cursor: pointer;
 }

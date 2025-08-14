@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import logo from "../../assets/Logo.webp";
+import logo from "/Logo.webp";
 
 const Header = () => {
   const navLinkClasses = ({ isActive }) =>

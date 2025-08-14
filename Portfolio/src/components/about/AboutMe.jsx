@@ -22,14 +22,14 @@ const AboutMe = () => {
             <img
               src={data.imageMap.prop1}
               alt="Dotted Design"
-              className="absolute bottom-2 right-2"
+              className="absolute  bottom-2 right-2"
             ></img>
           </div>
-          <div className="relative w-72 h-72">
+          <div className="relative z-10 w-72 h-72">
             <img
               src={data.imageMap.profile2}
               alt="A profile picture of Deep"
-              className=" rounded-lg shadow-lg scale-130 hover:scale-140 hover:cursor-pointer"
+              className=" rounded-lg  shadow-lg scale-130 hover:scale-140 hover:cursor-pointer"
             ></img>
           </div>
           <div className="relative mx-2 w-72 h-72">

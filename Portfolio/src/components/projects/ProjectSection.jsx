@@ -1,32 +1,61 @@
+import { useMemo } from "react";
 import ProjectCard from "./ProjectCard";
-import { projects } from "../../data/projectData"
+import SmallProjectCard from "./SmallProjectCard";
+import { bigProjects } from "../../data/projectData";
+import { smallProject } from "../../data/projectData";
+import Section from "../common/Section";
 
-const ProjectSection = () => {
+const ProjectSection = ({
+  limit,
+  showFeaturedOnly = false,
+  title = "projects",
+  items = bigProjects,
+  variant = "projects",
+}) => {
+  const filteredProjects = useMemo(() => {
+    if (showFeaturedOnly) {
+      items = items.filter((p) => p.featured);
+    }
+    if (limit) {
+      return items.slice(0, limit);
+    }
+
+    return items;
+  }, [limit, showFeaturedOnly]);
 
   return (
     <>
-      <section id="projects" className="py-16 md:py-24">
-        <div className="container flex-row">
-          <div>
-            <div className="flex justify-between items-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-bold text-white">
-                <span className="text-purple">#projects</span>
-                <span className="text-purple mx-4">
-                  ------------------------
-                </span>
-              </h2>
-              <a href="/projects" className="hover:cursor-pointer hover:underline">
-                View all {">>"}
-              </a>
-            </div>
+      <Section id={title} title={title}>
+        {variant === "projects" && (
+          <>
+            <h3 className="text-2xl">
+              <span className="text-purple">{" ~~ "}</span>list of my projects
+              <span className="text-purple">{" ~~ "}</span>
+            </h3>
+            <h2 className="text-2xl my-10 md:text-3xl font-bold text-white mb-10 text-right">
+              <span className="text-purple">@</span>big projects
+            </h2>
+          </>
+        )}
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {filteredProjects.map((p) => (
+            <ProjectCard key={p.id} project={p} />
+          ))}
+        </div>
+        {variant === "projects" && (
+          <>
+            <h2 className="text-2xl my-10 md:text-3xl font-bold text-white mb-10 text-right">
+              <span className="text-purple">@</span>small projects
+            </h2>
             <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {projects.map( p => (
-                <ProjectCard key={p.id} project={p} />
+              {smallProject.map((p) => (
+                <SmallProjectCard key={p.id} project={p} />
               ))}
             </div>
-          </div>
-        </div>
-      </section>
+          </>
+        )}
+      </Section>
     </>
   );
 };

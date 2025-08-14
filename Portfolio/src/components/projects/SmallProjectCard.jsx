@@ -1,11 +1,10 @@
-const ProjectCard = ({ project }) => {
+const SmallProjectCard = ({ project }) => {
   const {
     id,
     title,
     shortDesc,
     tech,
     liveUrl,
-    image
   } = project;
 
   return (
@@ -14,12 +13,7 @@ const ProjectCard = ({ project }) => {
         key={id}
         className="border-2 border-gray-700 bdr transition-colors"
       >
-        <img
-          src={image}
-          alt={`${title} thumbnail`}
-          className="border border-2 border-gray-500"
-          loading="lazy"
-        ></img>
+       
         <p className="p-2 border border-2 border-gray-500 text-sm text-gray-400 font-semibold mb-2">
           {tech.join(" ")}
         </p>
@@ -45,4 +39,4 @@ const ProjectCard = ({ project }) => {
   );
 };
 
-export default ProjectCard;
+export default SmallProjectCard;

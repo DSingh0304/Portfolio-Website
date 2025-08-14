@@ -10,7 +10,7 @@ const HomePage = () =>  {
     return <>
       <Hero />
       <QuoteBlock />
-      <ProjectSection limit={3} showFilters={false} />
+      <ProjectSection variant="home" limit={3} showFeaturedOnly={true} title="projects" />
       <SkillsGroup />
       <AboutMe />
       <ContactMe />
