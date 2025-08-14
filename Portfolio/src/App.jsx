@@ -1,24 +1,27 @@
-import "./App.css";
-import Hero from "./components/ui/Hero";
-import QuoteBlock from "./components/common/QuoteBlock";
-import ProjectCard from "./components/projects/ProjectSection";
-import SkillsGroup from "./components/skills/SkillsGroup";
-import AboutMe from "./components/about/AboutMe";
-import ContactMe from "./components/contacts/ContactMe";
+import { createBrowserRouter , RouterProvider } from "react-router-dom";
+import RootLayout from "./components/layout/RootLayout";
+import HomePage from "./pages/HomePage";
+import ProjectsPage from "./pages/ProjectsPage";
+import AboutPage from "./pages/AboutPage";
+import ContactPage from "./pages/ContactPage";
+import NotFoundPage from "./pages/NotFoundPage"
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <RootLayout/>,
+    errorElement: <NotFoundPage/>,
+    children: [
+      { index: true , element: <HomePage /> },
+      { path: "projects" , element: <ProjectsPage /> },
+      { path: "about" , element: <AboutPage /> },
+      { path: "contacts" , element: <ContactPage /> },
+    ],
+  },
+])
 
 function App() {
-  return (
-    <>
-      <Header />
-      <Hero />
-      <QuoteBlock />
-      <ProjectCard />
-      <SkillsGroup />
-      <AboutMe />
-      <ContactMe />
-      <Footer />
-    </>
-  );
+  return <RouterProvider router={router} /> ;
 }
 
 export default App;

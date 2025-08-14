@@ -10,13 +10,13 @@ const QuoteBlock = () => {
         <div>
           <div>
             <div className="container relative z-10 flex flex-col max-w-3xl">
-              <div className="border border-gray-300 p-6">
+              <div className="border bdr border-gray-300 p-6">
                 <blockquote className="text-center text-xl md:text-2xl font-medium">
                   <span className="text-5xl">"</span>{data.quote}<span className="text-5xl">"</span>
                 </blockquote>
               </div>
               <div className="flex justify-end">
-                <span className="border p-3 border-gray-300">{data.author}</span>
+                <span className="border bdr p-3 border-gray-300">{data.author}</span>
               </div>
             </div>
           </div>

@@ -1,9 +1,10 @@
-import logo from "../../assets/Logo.webp"
+import logo from "../../assets/Logo.webp";
 
 const Footer = () => {
   return (
     <>
       <footer className="py-8 border-t border-gray-800">
+        <hr className="my-4" ></hr>
         <div className="container flex flex-col md:flex-row justify-between items-center text-center md:text-left">
           <div className="mb-4 md:mb-0">
             <a
