@@ -19,7 +19,7 @@ const WebsiteLoader = () => {
         />
       </div>
       <span className="mt-6 text-[#c778dd] text-lg font-mono tracking-wide">
-        Loading Portfolio...
+        Loading ...
       </span>
     </div>
   );

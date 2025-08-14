@@ -4,7 +4,7 @@ const ProjectCard = ({ project }) => {
     title,
     shortDesc,
     tech,
-    liveUrl,
+    repoUrl,
     image
   } = project;
 
@@ -31,12 +31,13 @@ const ProjectCard = ({ project }) => {
             {title}
           </h3>
           <p className="text-gray-400 text-sm mb-4">{shortDesc}</p>
-          {liveUrl && (
+          {repoUrl && (
             <a
-              href={liveUrl}
+              href={repoUrl}
+              target="_blank"
               className="text-sm px-4 py-2 border text-purple border-purple hover:text-white transition-colors"
             >
-              Live {">>"}
+              Repo {">>"}
             </a>
           )}
         </div>

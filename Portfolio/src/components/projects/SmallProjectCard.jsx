@@ -4,7 +4,7 @@ const SmallProjectCard = ({ project }) => {
     title,
     shortDesc,
     tech,
-    liveUrl,
+    repoUrl,
   } = project;
 
   return (
@@ -25,12 +25,12 @@ const SmallProjectCard = ({ project }) => {
             {title}
           </h3>
           <p className="text-gray-400 text-sm mb-4">{shortDesc}</p>
-          {liveUrl && (
+          {repoUrl && (
             <a
-              href={liveUrl}
+              href={repoUrl}
               className="text-sm px-4 py-2 border text-purple border-purple hover:text-white transition-colors"
             >
-              Live {">>"}
+             Repo {">>"}
             </a>
           )}
         </div>
