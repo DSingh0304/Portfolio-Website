@@ -10,7 +10,7 @@ export const heroData = {
   ],
   subText: "He crafts responsive websites where technologies meet creativity.",
   resumeUrl:
-    "https://drive.google.com/file/d/1dwml0o4SQSPVceUfWA1Y_H-YnJcKWBB-/view?usp=sharing",
+    "https://drive.google.com/file/d/1PGHwcVvBui6-H1Jpxt-IhrzumzUOjdXh/view?usp=sharing",
   cta: {
     label: "Contact Him -->",
     to: "/contacts",
