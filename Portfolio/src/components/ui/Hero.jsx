@@ -30,9 +30,21 @@ const Hero = ({ data = heroData }) => {
               <p className="text-gray-400 mb-6 sm:mb-8 max-w-md mx-auto md:mx-0">
                 {data.subText}
               </p>
-              <a href={data.cta.to} onClick={handleCTA}  className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 border border-purple hover:text-white transition-colors font-semibold">
-                {data.cta.label}
-              </a>
+              <div className="inline-flex items-center gap-3 sm:gap-4">
+                {data.resumeUrl && (
+                  <a
+                    href={data.resumeUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 border border-purple hover:text-white transition-colors font-semibold"
+                  >
+                    Resume
+                  </a>
+                )}
+                <a href={data.cta.to} onClick={handleCTA}  className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 border border-purple hover:text-white transition-colors font-semibold">
+                  {data.cta.label}
+                </a>
+              </div>
             </div>
           </div>
 
