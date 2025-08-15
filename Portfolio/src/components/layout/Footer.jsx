@@ -32,7 +32,7 @@ const Footer = () => {
             <div className="flex items-center justify-center gap-4">
               <a
                 href="https://github.com/DSingh0304"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 className=" text-2xl text-gray-400 hover:text-white transition-colors"
               >
               <FaGithub />
@@ -40,21 +40,21 @@ const Footer = () => {
               </a>
               <a
                 href="https://www.linkedin.com/in/deepshekharsingh/"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 className=" text-2xl text-gray-400 hover:text-white transition-colors"
               >
                <FaLinkedin />
               </a>
               <a
                 href="https://x.com/DeepShekhar03"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 className=" text-2xl   text-gray-400 hover:text-white transition-colors"
               >
                <FaSquareXTwitter />
               </a>
               <a
                 href="https://www.instagram.com/_deep_3.0_/"
-                target="_blank"
+                target="_blank" rel="noopener noreferrer"
                 className=" text-2xl   text-gray-400 hover:text-white transition-colors"
               >
                <FaInstagramSquare />

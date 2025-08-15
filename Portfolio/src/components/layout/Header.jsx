@@ -19,6 +19,20 @@ const Header = () => {
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  // Lock background scroll when menu is open (mobile)
+  useEffect(() => {
+    const { body } = document;
+    if (!body) return;
+    if (menuOpen) {
+      body.style.overflow = "hidden";
+    } else {
+      body.style.overflow = "";
+    }
+    return () => {
+      body.style.overflow = "";
+    };
+  }, [menuOpen]);
+
   return (
     <header className="py-4 sticky top-0 z-40 bg-[#282c33]/80 backdrop-blur">
       <div className="container flex justify-between items-center">
