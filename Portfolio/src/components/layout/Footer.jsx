@@ -11,13 +11,13 @@ const Footer = () => {
     <>
       <footer className="py-8 border-t border-gray-800">
         <hr className="my-4" ></hr>
-        <div className="container flex flex-col md:flex-row justify-between items-center text-center md:text-left">
-          <div className="mb-4 md:mb-0">
+        <div className="container flex flex-col md:flex-row items-center justify-center gap-6 text-center">
+          <div className="mb-2 md:mb-0 flex flex-col items-center">
             <a
               href="#"
               className="flex items-center space-x-2 text-white text-xl font-bold"
             >
-              <img src={logo} alt="LOGO"></img>
+              <img src={logo} alt="LOGO" className="h-8 w-auto" />
               <span>Deep</span>
             </a>
             <p className="text-gray-500 text-sm mt-2">
@@ -27,9 +27,9 @@ const Footer = () => {
               © Copyright 2025. Made by Deep
             </p>
           </div>
-          <div className="flex flex-col items-center md:items-end">
+          <div className="flex flex-col items-center">
             <h3 className="text-white font-bold mb-4 text-hover ">Media</h3>
-            <div className="flex space-x-4">
+            <div className="flex items-center justify-center gap-4">
               <a
                 href="https://github.com/DSingh0304"
                 target="_blank"

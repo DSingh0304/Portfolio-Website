@@ -16,6 +16,37 @@ body {
   margin: 0 auto;
   padding: 0 1rem;
 }
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Simple slide-down animation for mobile nav */
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+.animate-slideDown {
+  animation: slideDown 0.2s ease-out both;
+}
+
+/* Orientation-aware tweaks */
+@media (orientation: portrait) {
+  .hero-prop { display: none !important; }
+}
+
+/* Keep props only on laptop/large screens */
+@media (max-width: 1023px) { /* below lg */
+  .hero-prop { display: none !important; }
+}
+
+/* Small landscape: make grids 2 columns when width is small but in landscape */
+@media (orientation: landscape) and (max-width: 800px) {
+  .grid-orientation {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 /* Custom styles to mimic the geometric patterns */
 .pattern-dots {
   background-image: radial-gradient(var(--color-gray) 1px, transparent 1px);

@@ -4,7 +4,7 @@ import { funFacts } from "../../data/funFacts.js"
 const MyFunFacts = () => {
 
     return <>
-    <Section id={'FunFacts'} title={'fun facts about me'}>
+    <Section id={'FunFacts'} title={'facts about me'}>
         <div className="container mx-auto px-4">
             <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3" role="list">
                 {funFacts.map((fact, index) => (

@@ -46,11 +46,11 @@ const ContactForm = () => {
   return (
     <div className="flex w-full justify-center">
       <form
-        className="w-1/2 p-6 bg-black/30 rounded-lg shadow-lg border border-purple/40"
+        className="w-full mx-4 sm:w-4/5 md:w-2/3 lg:w-1/2 p-4 sm:p-6 bg-black/30 rounded-lg shadow-lg border border-purple/40"
         onSubmit={handleSubmit}
         autoComplete="off"
       >
-        <h2 className="text-xl font-bold text-white mb-4">Contact Me</h2>
+        <h2 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">Contact Me</h2>
         {error && <p className="text-red-400 mb-2">{error}</p>}
         <div className="mb-4">
           <label htmlFor="name" className="block text-gray-300 mb-1">
@@ -97,7 +97,7 @@ const ContactForm = () => {
         <div className="w-full flex justify-center">
         <button
           type="submit"
-          className="w-fit py-2 px-4 cursor-pointer hover:bg-white hover:text-black text-white  font-semibold rounded hover:bg-purple/80 bdr transition-colors"
+          className="w-fit py-2 px-4 cursor-pointer border border-purple font-semibold rounded transition-colors bg-white text-black md:bg-transparent md:text-white hover:bg-white hover:text-black"
         >
           Send Message
         </button>
