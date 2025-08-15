@@ -30,13 +30,13 @@ const Hero = ({ data = heroData }) => {
               <p className="text-gray-400 mb-6 sm:mb-8 max-w-md mx-auto md:mx-0">
                 {data.subText}
               </p>
-              <div className="inline-flex items-center gap-3 sm:gap-4">
+      <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
                 {data.resumeUrl && (
                   <a
                     href={data.resumeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 border border-purple hover:text-white transition-colors font-semibold"
+        className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 border border-purple hover:text-white transition-colors font-semibold"
                   >
                     Resume
                   </a>
