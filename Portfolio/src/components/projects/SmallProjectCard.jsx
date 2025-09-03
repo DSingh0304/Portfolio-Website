@@ -30,14 +30,24 @@ const SmallProjectCard = ({ project }) => {
               {title}
             </h3>
             <p className="text-gray-400 text-sm mb-4">{shortDesc}</p>
-            {repoUrl && (
-              <div className="flex justify-center md:justify-start">
-                <a
-                  href={repoUrl}
-                  className="text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
-                >
-                  Repo {">>"}
-                </a>
+            {(repoUrl || project.liveUrl) && (
+              <div className="flex flex-col gap-2 items-center sm:flex-row sm:justify-center md:justify-start">
+                {repoUrl && (
+                  <a
+                    href={repoUrl} target="_blank"
+                    className="text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
+                  >
+                    Repo {">>"}
+                  </a>
+                )}
+                {project.liveUrl && (
+                  <a
+                    href={project.liveUrl} target="_blank"
+                    className="text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
+                  >
+                    Live {">>"}
+                  </a>
+                )}
               </div>
             )}
           </div>

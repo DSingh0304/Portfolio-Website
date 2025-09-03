@@ -39,7 +39,7 @@ const ProjectCard = ({ project }) => {
             </h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">{shortDesc}</p>
             {(repoUrl || liveUrl) && (
-              <div className="flex justify-center md:justify-start gap-2">
+              <div className="flex flex-col gap-2 items-center sm:flex-row sm:justify-center md:justify-start">
                 <div>
                   {repoUrl && (
                     <a
