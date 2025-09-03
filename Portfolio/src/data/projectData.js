@@ -1,31 +1,33 @@
 import dhanvantri from "../assets/dhanvantri.webp";
-import farmsync from "../assets/farmsync.webp";
+import streamify from "../assets/streamify.png";
 import iiituna from "../assets/iiituna.webp";
 
 export const bigProjects = [
   {
-    id: "farmsync-project",
-    title: "FarmSync",
-    shortDesc: "A direct-to-consumer platform for farmers.",
+    id: "streamify",
+    title: "Streamify",
+    shortDesc: "A social media platform for chatting and videocall.",
     fullDesc:
-      "FarmSync is a direct-to-consumer (D2C) platform designed to help farmers sell their produce directly. It features a user-facing marketplace where consumers can access fresh, locally-sourced goods. The project involved building and integrating APIs to manage product listings, user profiles, and transactions, all delivered as a functional prototype under strict time constraints.",
+      "The Video Chat Application is a full-stack web project that goes beyond just video calls. It is a comprehensive social platform built with React and Node.js that includes features for real-time video communication, direct messaging, and making friends. It is designed to be a unified space for users to connect and interact seamlessly.",
     tech: ["Node.js", "React.js", "Express.js", "MongoDB"],
-    tags: ["fullstack", "ecommerce", "api", "teamwork"],
-    repoUrl: "https://github.com/DSingh0304/FarmSync",
-    createdAt: "Feb 2025",
-    image: farmsync,
+    tags: ["restapi", "social-media", "video-chat", "chat-app"],
+    repoUrl: "https://github.com/DSingh0304/VideoChatApplication",
+    liveUrl: "https://videochatapplication-wvfk.onrender.com/login",
+    createdAt: "Aug 2025",
+    image: streamify,
     featured: true,
     smallProject: false,
   },
   {
     id: "dhanvantri-project",
     title: "Dhanvantri",
-    shortDesc: "A unified healthcare web application.",
+    shortDesc: "A unified healthcare web application for revolutionizing healthcare.",
     fullDesc:
       "Co-developed during a national-level hackathon, Dhanvantri is a unified healthcare web application. The platform was engineered to connect patients directly with medical professionals and included real-time telemedicine capabilities for virtual consultations.",
     tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
     tags: ["fullstack", "hackathon", "healthcare", "telemedicine"],
     repoUrl: "https://github.com/DSingh0304/dhanvantri.pages.io",
+    liveUrl: null,
     image: dhanvantri,
     featured: true,
     createdAt: "Mar 2025",
@@ -40,6 +42,7 @@ export const bigProjects = [
     tech: ["MERN Stack", "React.js", "Node.js", "Express.js", "MongoDB", "Git"],
     tags: ["fullstack", "maintenance", "collaboration", "website"],
     repoUrl: null,
+    liveUrl: "https://iiitu.ac.in/",
     image: iiituna,
     featured: true,
     createdAt: "April 2025",
@@ -57,6 +60,7 @@ export const smallProject = [
     tech: ["React.js", "Node.js", "API", "Express.js", "Tailwind CSS"],
     tags: ["fullstack", "search-engine", "api", "web"],
     repoUrl: "https://github.com/DSingh0304/Picture-Search-Engine",
+    liveUrl: null,
     createdAt: "June 2024",
     featured: false,
     smallProject: true,
@@ -70,9 +74,23 @@ export const smallProject = [
     tech: ["HTML", "CSS", "JavaScript", "API"],
     tags: ["frontend", "api", "weather", "web"],
     repoUrl: "https://github.com/DSingh0304/WeatherNow",
+    liveUrl: null,
     featured: false,
     createdAt: "November 2023",
     smallProject: true,
+  },
+  {
+    id: "farmsync-project",
+    title: "FarmSync",
+    shortDesc: "A direct-to-consumer platform for farmers.",
+    fullDesc:
+      "FarmSync is a direct-to-consumer (D2C) platform designed to help farmers sell their produce directly. It features a user-facing marketplace where consumers can access fresh, locally-sourced goods. The project involved building and integrating APIs to manage product listings, user profiles, and transactions, all delivered as a functional prototype under strict time constraints.",
+    tech: ["Node.js", "React.js", "Express.js", "MongoDB"],
+    tags: ["fullstack", "ecommerce", "api", "teamwork"],
+    repoUrl: "https://github.com/DSingh0304/FarmSync",
+    liveUrl: null,
+    createdAt: "Feb 2025",
+    smallProject: false,
   },
   {
     id: "myntra-clone",
@@ -83,6 +101,7 @@ export const smallProject = [
     tech: ["React.js", "Tailwind CSS"],
     tags: ["frontend", "e-commerce", "react"],
     repoUrl: "https://github.com/DSingh0304/Myntra-Clone",
+    liveUrl: null,
     featured: false,
     createdAt: "July 2024",
     smallProject: true,

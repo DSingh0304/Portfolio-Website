@@ -5,7 +5,8 @@ const ProjectCard = ({ project }) => {
     shortDesc,
     tech,
     repoUrl,
-    image
+    image,
+    liveUrl
   } = project;
 
   return (
@@ -31,15 +32,30 @@ const ProjectCard = ({ project }) => {
             {title}
           </h3>
           <p className="text-gray-400 text-sm leading-relaxed mb-4">{shortDesc}</p>
-          {repoUrl && (
-            <div className="flex justify-center md:justify-start">
-              <a
-                href={repoUrl}
-                target="_blank"
-                className="inline-block text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
-              >
-                Repo {">>"}
-              </a>
+          {(repoUrl || liveUrl) && (
+            <div className="flex justify-center md:justify-start gap-2">
+              <div>
+                {repoUrl && (
+                  <a
+                    href={repoUrl}
+                    target="_blank"
+                    className="inline-block text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
+                  >
+                    Repo {">>"}
+                  </a>
+                )}
+              </div>
+              <div>
+                {liveUrl && (
+                  <a
+                    href={liveUrl}
+                    target="_blank"
+                    className="inline-block text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
+                  >
+                    Live {">>"}
+                  </a>
+                )}
+              </div>
             </div>
           )}
         </div>
