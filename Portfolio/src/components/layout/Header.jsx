@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "/Logo.webp";
-import { FiHome, FiFolder, FiUser, FiMail, FiX } from "react-icons/fi";
+import { FiHome, FiFolder, FiUser, FiMail, FiX, FiGitBranch } from "react-icons/fi";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -51,6 +51,9 @@ const Header = () => {
           </NavLink>
           <NavLink to="/projects" className={navLinkClasses}>
             <span className="text-purple">#</span>projects
+          </NavLink>
+          <NavLink to="/opensource" className={navLinkClasses}>
+            <span className="text-purple">#</span>opensource
           </NavLink>
           <NavLink to="/about" className={navLinkClasses}>
             <span className="text-purple">#</span>about
@@ -126,6 +129,16 @@ const Header = () => {
                 >
                   <FiFolder className="text-purple" />
                   <span>projects</span>
+                </NavLink>
+                <NavLink
+                  to="/opensource"
+                  onClick={() => setMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `${navLinkClasses({ isActive })} flex items-center gap-3 px-3 py-3 rounded hover:bg-white/5 active:bg-white/10`
+                  }
+                >
+                  <FiGitBranch className="text-purple" />
+                  <span>opensource</span>
                 </NavLink>
                 <NavLink
                   to="/about"
