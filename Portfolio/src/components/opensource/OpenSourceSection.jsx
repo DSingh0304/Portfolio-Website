@@ -15,12 +15,18 @@ const OpenSourceSection = ({
     if (showFeaturedOnly) {
       list = list.filter((p) => p.featured);
     }
+
+    // Shuffle the list for home variant to show random contributions
+    if (variant === "home") {
+      list = [...list].sort(() => Math.random() - 0.5);
+    }
+
     if (limit) {
       return list.slice(0, limit);
     }
 
     return list;
-  }, [items, limit, showFeaturedOnly]);
+  }, [items, limit, showFeaturedOnly, variant]);
 
   return (
     <>
@@ -31,7 +37,7 @@ const OpenSourceSection = ({
               <span className="text-purple">{" ~~ "}</span>my open source contributions
               <span className="text-purple">{" ~~ "}</span>
             </h3>
-            
+
             <h2 className="text-xl sm:text-2xl md:text-3xl my-6 sm:my-10 font-bold text-white mb-6 sm:mb-10 text-center md:text-right">
               <span className="text-purple">@</span>Apache Apisix
             </h2>
