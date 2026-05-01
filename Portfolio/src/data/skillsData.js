@@ -2,31 +2,21 @@ export const skills = [
   {
     id: "1",
     title: "Languages",
-    content: ["C++", "Python", "Java", "SQL" , "Shell"],
+    content: ["Java", "Python", "C++", "JavaScript", "TypeScript", "Go"],
   },
   {
     id: "2",
-    title: "Web",
-    content: ["HTML", "CSS", "TailwindCSS" , "Bootstrap" , "Javascript" , "Typescript"],
+    title: "Web & Frameworks",
+    content: ["HTML", "Tailwind CSS", "React.js", "Next.js", "Express.js", "Django", "Flask", "React Native"],
   },
   {
     id: "3",
-    title: "Frameworks",
-    content: [
-      "MongoDB",
-      "Node.js",
-      "Latex",
-      "Git",
-      "GitHub",
-      "AndroidStudio",
-      "Redux",
-      "Linux",
-    ],
+    title: "Databases",
+    content: ["PostgreSQL", "MySQL", "MongoDB", "Prisma"],
   },
   {
     id: "4",
-    title: "Technologies",
-    content: ["React.js", "Express.js", "Spring", "Spring Boot"],
+    title: "Cloud & DevOps",
+    content: ["AWS", "Docker", "Git", "GitHub", "GitHub Actions", "Cloudflare"],
   },
-
 ];

@@ -4,11 +4,11 @@ export const about = {
   id: "about-me",
   intro: "Hello, I'm Deep!",
   desc1:
-    "I'm Deep Shekhar Singh, a passionate and driven backend engineer with a strong focus on building robust and scalable systems. My experience in architecting and developing APIs, primarily with the MERN stack (MongoDB, Express.js, and Node.js), has allowed me to craft efficient and reliable solutions from the ground up.",
+    "I'm Deep Shekhar Singh, a B.Tech Information Technology student at IIIT Una. I am a passionate Full Stack Developer and Open Source Contributor at the Apache Software Foundation, where I've contributed 13+ merged PRs to the APISIX Dashboard, strengthening cloud-scale platform reliability.",
   desc2:
-    "I thrive on solving complex problems and am deeply committed to creating clean, maintainable code. As a lifelong learner, I am always seeking new challenges and opportunities to expand my skills in backend development.",
+    "My expertise lies in architecting production-grade systems, from financial ledger engines with full ACID compliance to automated hostel allocation platforms. I thrive in fast-paced environments, having worked on JWT-secured REST APIs and real-time WebSocket systems at Yes City and re-engineered high-performance interfaces at IIT Mandi.",
   desc3:
-    "I'm a passionate software developer with a strong competitive spirit, channeling my skills toward preparing for Google Summer of Code (GSOC) and participating in hackathons. My experience in these high-pressure, collaborative environments has sharpened my ability to quickly prototype innovative solutions, as demonstrated by my work on projects like Dhanvantri and FarmSync. With a solid foundation in the MERN stack and a constant drive to learn new technologies, I am always ready to tackle a challenge and build impactful, high-quality projects.",
+    "I'm a constant builder and lifelong learner, with a strong foundation in Distributed Systems, Data Structures, and DevOps. Beyond engineering, I've held leadership roles as the Head of Engineering for the ACM Student Chapter and have a competitive background as a state-level footballer. I am always looking for challenges that push the boundaries of technology and creativity.",
   cta: {
     label: "Read More",
     to: "/about",

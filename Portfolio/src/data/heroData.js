@@ -6,11 +6,11 @@ export const heroData = {
     { text: "Deep is a ", accent: false },
     { text: "software developer", accent: true },
     { text: " and ", accent: false },
-    { text: "ML enthusiast", accent: true },
+    { text: "open source contributor", accent: true },
   ],
   subText: "He crafts responsive websites where technologies meet creativity.",
   resumeUrl:
-    "https://drive.google.com/file/d/1H2o3KgGhiX0R8zx9gYmtlH-ucoWOOVNq/view?usp=sharing",
+    "https://drive.google.com/file/d/1_jFcgdI_Tyky5O9DXF64o0oedzbUExoN/view?usp=sharing",
   cta: {
     label: "Contact Him -->",
     to: "/contacts",

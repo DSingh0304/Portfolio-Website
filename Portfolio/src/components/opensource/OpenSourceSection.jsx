@@ -1,6 +1,12 @@
 import { useMemo } from "react";
 import OpenSourceCard from "./OpenSourceCard";
-import { apacheApisixProjects, rocketChatProjects, allOpenSourceProjects } from "../../data/opensourceData";
+import { 
+  apacheApisixProjects, 
+  rocketChatProjects, 
+  zulipProjects, 
+  keployProjects, 
+  allOpenSourceProjects 
+} from "../../data/opensourceData";
 import Section from "../common/Section";
 
 const OpenSourceSection = ({
@@ -48,10 +54,28 @@ const OpenSourceSection = ({
             </div>
 
             <h2 className="text-xl sm:text-2xl md:text-3xl my-6 sm:my-10 font-bold text-white mb-6 sm:mb-10 text-center md:text-right">
+              <span className="text-purple">@</span>Zulip
+            </h2>
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 grid-orientation mb-12">
+              {zulipProjects.map((p) => (
+                <OpenSourceCard key={p.id} project={p} />
+              ))}
+            </div>
+
+            <h2 className="text-xl sm:text-2xl md:text-3xl my-6 sm:my-10 font-bold text-white mb-6 sm:mb-10 text-center md:text-right">
               <span className="text-purple">@</span>Rocket.Chat
             </h2>
-            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 grid-orientation">
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 grid-orientation mb-12">
               {rocketChatProjects.map((p) => (
+                <OpenSourceCard key={p.id} project={p} />
+              ))}
+            </div>
+
+            <h2 className="text-xl sm:text-2xl md:text-3xl my-6 sm:my-10 font-bold text-white mb-6 sm:mb-10 text-center md:text-right">
+              <span className="text-purple">@</span>Keploy
+            </h2>
+            <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 grid-orientation">
+              {keployProjects.map((p) => (
                 <OpenSourceCard key={p.id} project={p} />
               ))}
             </div>

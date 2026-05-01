@@ -79,9 +79,6 @@ img {
 .border-purple {
   border-color: var(--color-accent);
 }
-.border-purple:hover {
-  background-color: var(--color-accent);
-}
 .bdr:hover {
   border-color: var(--color-accent);
 }

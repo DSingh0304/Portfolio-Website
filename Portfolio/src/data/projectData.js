@@ -1,8 +1,24 @@
 import dhanvantri from "../assets/dhanvantri.webp";
 import streamify from "../assets/streamify.png";
 import iiituna from "../assets/iiituna.webp";
+import hostel from "../assets/HostelAllocationSystem.png";
 
 export const bigProjects = [
+  {
+    id: "resident-iq",
+    title: "ResidentIQ",
+    shortDesc: "A production-grade smart hostel allocation platform.",
+    fullDesc:
+      "ResidentIQ is a comprehensive hostel seat allocation platform designed for educational institutions to provide a transparent, automated room allocation process. It features role-based access for students, wardens, and admins, real-time updates via WebSockets, and a robust background task processing system for notifications and approvals.",
+    tech: ["Next.js", "React 19", "TypeScript", "Node.js", "Prisma", "PostgreSQL", "Socket.io", "Docker"],
+    tags: ["fullstack", "saas", "automation", "real-time"],
+    repoUrl: "https://github.com/DSingh0304/HostleSeatAllocation",
+    liveUrl: null,
+    createdAt: "May 2026",
+    image: hostel,
+    featured: true,
+    smallProject: false,
+  },
   {
     id: "streamify",
     title: "Streamify",
@@ -16,21 +32,6 @@ export const bigProjects = [
     createdAt: "Aug 2025",
     image: streamify,
     featured: true,
-    smallProject: false,
-  },
-  {
-    id: "dhanvantri-project",
-    title: "Dhanvantri",
-    shortDesc: "A unified healthcare web application for revolutionizing healthcare.",
-    fullDesc:
-      "Co-developed during a national-level hackathon, Dhanvantri is a unified healthcare web application. The platform was engineered to connect patients directly with medical professionals and included real-time telemedicine capabilities for virtual consultations.",
-    tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
-    tags: ["fullstack", "hackathon", "healthcare", "telemedicine"],
-    repoUrl: "https://github.com/DSingh0304/dhanvantri.pages.io",
-    liveUrl: null,
-    image: dhanvantri,
-    featured: true,
-    createdAt: "Mar 2025",
     smallProject: false,
   },
   {
@@ -51,6 +52,21 @@ export const bigProjects = [
 ];
 
 export const smallProject = [
+  {
+    id: "dhanvantri-project",
+    title: "Dhanvantri",
+    shortDesc: "A unified healthcare web application.",
+    fullDesc:
+      "Co-developed during a national-level hackathon, Dhanvantri is a unified healthcare web application designed to connect patients directly with medical professionals with real-time telemedicine capabilities.",
+    tech: ["React.js", "Node.js", "Express.js", "MongoDB"],
+    tags: ["fullstack", "hackathon", "healthcare", "telemedicine"],
+    repoUrl: "https://github.com/DSingh0304/dhanvantri.pages.io",
+    liveUrl: null,
+    image: dhanvantri,
+    featured: false,
+    createdAt: "Mar 2025",
+    smallProject: true,
+  },
   {
     id: "picture-search-engine",
     title: "Picture Search Engine",
