@@ -67,7 +67,7 @@ const BlogPage = () => {
                     className="w-full h-full text-left hover:bg-white/5 transition-colors"
                     aria-label={`Open ${getPostTitle(post)}`}
                   >
-                    {post.images && post.images.length > 0 ? (
+                    {post.images && post.images.length > 0 && (
                       <img
                         src={post.images[0]}
                         alt={`${getPostTitle(post)} cover`}
@@ -76,11 +76,6 @@ const BlogPage = () => {
                         onError={(e) => {
                           e.target.style.display = "none";
                         }}
-                      />
-                    ) : (
-                      <div
-                        className={`w-full ${coverHeightClass} border-b border-gray-700 bg-gradient-to-br from-[#1f232a] via-[#282c33] to-[#1f232a]`}
-                        aria-hidden="true"
                       />
                     )}
                     <div className="p-4 flex flex-col h-full">

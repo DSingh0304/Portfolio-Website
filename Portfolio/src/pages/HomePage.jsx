@@ -14,7 +14,7 @@ const HomePage = () => {
     <QuoteBlock />
     <OpenSourceSection variant="home" limit={3} title="opensource" />
     <ProjectSection variant="home" limit={3} showFeaturedOnly={true} title="projects" />
-    <BlogSection limit={2} />
+    <BlogSection limit={3} />
     <SkillsGroup />
     <AboutMe variant="home" />
     <ContactMe />
