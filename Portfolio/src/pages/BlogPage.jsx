@@ -20,6 +20,8 @@ const getPostTitle = (post) => {
   return post.type === "tweet" ? "Tweet" : "Blog Post";
 };
 
+const coverHeightClass = "h-44 sm:h-48";
+
 const getExcerpt = (post) => {
   if (!post.content) {
     return "";
@@ -58,22 +60,27 @@ const BlogPage = () => {
             {allPosts.map((post) => (
                 <article 
                   key={post.id} 
-                  className="border-2 border-gray-700 bdr transition-all duration-300 rounded-md overflow-hidden relative bg-[#282c33] min-h-[360px]"
+                  className="border-2 border-gray-700 bdr transition-all duration-300 rounded-md overflow-hidden relative bg-[#282c33]"
                 >
                   <button
                     onClick={() => openPost(post)}
                     className="w-full h-full text-left hover:bg-white/5 transition-colors"
                     aria-label={`Open ${getPostTitle(post)}`}
                   >
-                    {post.images && post.images.length > 0 && (
+                    {post.images && post.images.length > 0 ? (
                       <img
                         src={post.images[0]}
                         alt={`${getPostTitle(post)} cover`}
-                        className="w-full h-44 sm:h-48 object-cover border-b border-gray-700"
+                        className={`w-full ${coverHeightClass} object-cover border-b border-gray-700`}
                         loading="lazy"
                         onError={(e) => {
                           e.target.style.display = "none";
                         }}
+                      />
+                    ) : (
+                      <div
+                        className={`w-full ${coverHeightClass} border-b border-gray-700 bg-gradient-to-br from-[#1f232a] via-[#282c33] to-[#1f232a]`}
+                        aria-hidden="true"
                       />
                     )}
                     <div className="p-4 flex flex-col h-full">
@@ -88,21 +95,19 @@ const BlogPage = () => {
                           )}
                         </div>
                       </div>
-                      <h2 className="text-lg sm:text-xl font-bold text-white mb-2">
+                      <h2 className="text-lg sm:text-xl font-bold text-white mb-2 line-clamp-2">
                         {getPostTitle(post)}
                       </h2>
                       <p className="text-gray-400 text-sm leading-relaxed line-clamp-4">
                         {getExcerpt(post)}
                       </p>
-                      {post.tags && post.tags.length > 0 && (
-                        <div className="flex flex-wrap gap-2 mt-4">
-                          {post.tags.slice(0, 4).map((tag) => (
-                            <span key={tag} className="text-purple text-[10px] border border-purple px-2 py-1 rounded">
-                              #{tag}
-                            </span>
-                          ))}
-                        </div>
-                      )}
+                      <div className="flex flex-wrap gap-2 mt-4 min-h-[26px]">
+                        {post.tags && post.tags.slice(0, 4).map((tag) => (
+                          <span key={tag} className="text-purple text-[10px] border border-purple px-2 py-1 rounded">
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
                     </div>
                   </button>
                 </article>
@@ -126,7 +131,7 @@ const BlogPage = () => {
               <img
                 src={activePost.images[0]}
                 alt={`${getPostTitle(activePost)} cover`}
-                className="w-full max-h-80 object-cover border-b border-gray-700 rounded-t-xl"
+                className="w-full h-auto object-contain border-b border-gray-700 rounded-t-xl"
                 onError={(e) => {
                   e.target.style.display = "none";
                 }}

@@ -15,6 +15,17 @@ const inputPath = path.resolve(inputArg);
 const outputPath = outputArg
   ? path.resolve(outputArg)
   : path.resolve("src/data/twitterArchiveData.js");
+const mediaDir = path.join(path.dirname(inputPath), "tweets_media");
+const outputMediaDir = path.resolve("public/twitter-media");
+const copiedMedia = new Set();
+
+const ensureMediaDir = () => {
+  if (fs.existsSync(mediaDir)) {
+    fs.mkdirSync(outputMediaDir, { recursive: true });
+    return true;
+  }
+  return false;
+};
 
 const raw = fs.readFileSync(inputPath, "utf8");
 const jsonText = raw
@@ -83,10 +94,38 @@ const stripMediaUrls = (text, media) => {
 
 const getMediaUrls = (tweet) => {
   const media = tweet.extended_entities?.media || tweet.entities?.media || [];
+  if (media.length === 0) {
+    return [];
+  }
+
+  const canCopy = ensureMediaDir();
+  const tweetId = tweet.id_str || String(tweet.id);
+
   const urls = media
-    .map((item) => item?.media_url_https || item?.media_url)
-    .filter(Boolean)
-    .map((url) => url.replace(/^http:\/\//, "https://"));
+    .map((item) => {
+      const mediaUrl = item?.media_url_https || item?.media_url;
+      if (!mediaUrl) {
+        return null;
+      }
+      const fileName = path.basename(mediaUrl);
+      if (!fileName) {
+        return null;
+      }
+      const localName = `${tweetId}-${fileName}`;
+      if (canCopy) {
+        const sourcePath = path.join(mediaDir, localName);
+        const destPath = path.join(outputMediaDir, localName);
+        if (fs.existsSync(sourcePath) && !copiedMedia.has(destPath)) {
+          fs.copyFileSync(sourcePath, destPath);
+          copiedMedia.add(destPath);
+        }
+        if (fs.existsSync(destPath)) {
+          return `/twitter-media/${localName}`;
+        }
+      }
+      return null;
+    })
+    .filter(Boolean);
 
   return Array.from(new Set(urls));
 };

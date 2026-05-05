@@ -87,7 +87,7 @@ export const twitterArchive = [
     "title": "Completed winter of code 5.0 hosted by @iiit_kalyani in @Keployio. Designed a...",
     "content": "Completed winter of code 5.0 hosted by @iiit_kalyani in @Keployio. Designed and implemented the whole playwright testing infrastructure for the keploy's blog website.\nLink: https://github.com/keploy/blog-website/pull/328",
     "images": [
-      "https://pbs.twimg.com/media/HEjrmbebQAAUPab.jpg"
+      "/twitter-media/2038138417805169063-HEjrmbebQAAUPab.jpg"
     ],
     "tags": [],
     "type": "tweet",
@@ -100,7 +100,7 @@ export const twitterArchive = [
     "title": "Broke the consistency in between due to holi and exams but I am back in the g...",
     "content": "Broke the consistency in between due to holi and exams but I am back in the game!!",
     "images": [
-      "https://pbs.twimg.com/media/HEjrCdkbcAAUkQ7.jpg"
+      "/twitter-media/2038137471050084863-HEjrCdkbcAAUkQ7.jpg"
     ],
     "tags": [],
     "type": "tweet",
@@ -124,7 +124,7 @@ export const twitterArchive = [
     "title": "540+ contributions! \u{1f680} From full-stack dev at Yes City to merging 10+ PRs in ...",
     "content": "540+ contributions! \u{1f680}\nFrom full-stack dev at Yes City to merging 10+ PRs in Apache APISIX, it\u2019s been an incredible journey.\n\u2705 Cleared Apache APISIX E2E testing backlog . \u2705 Fixed bugs in http://Rocket.Chat Web & React Native apps. \u2705 Leading the Dev Team at IIIT Una.",
     "images": [
-      "https://pbs.twimg.com/media/G-CYjSyboAA_DbL.jpg"
+      "/twitter-media/2008775182048227619-G-CYjSyboAA_DbL.jpg"
     ],
     "tags": [],
     "type": "tweet",
@@ -209,7 +209,7 @@ export const twitterArchive = [
     "title": "Consistency is key! Actively pushing and pulling code, forking repositories, ...",
     "content": "Consistency is key! Actively pushing and pulling code, forking repositories, and building my GitHub profile. It's not just about the code, it's about the journey and the badges I'm earning along the way. #developer #programming",
     "images": [
-      "https://pbs.twimg.com/media/Gy8BkTybUAAXqb1.jpg"
+      "/twitter-media/1958786097145651389-Gy8BkTybUAAXqb1.jpg"
     ],
     "tags": [
       "developer",
@@ -236,8 +236,8 @@ export const twitterArchive = [
     "title": "The story behind my portfolio: I built it with #ReactJS and deployed it using...",
     "content": "The story behind my portfolio: I built it with #ReactJS and deployed it using @awscloud S3 and @cloudfront . Everything was going well until I ran into a brick wall: a stubborn \"Access Denied\" error on every single page.\n#WebDevelopment #Deployment #Troubleshooting #AWSCloud",
     "images": [
-      "https://pbs.twimg.com/media/GyYSTI-a4AY1Mek.jpg",
-      "https://pbs.twimg.com/media/GyYSTJAa4AQM2sE.jpg"
+      "/twitter-media/1956271225241788770-GyYSTI-a4AY1Mek.jpg",
+      "/twitter-media/1956271225241788770-GyYSTJAa4AQM2sE.jpg"
     ],
     "tags": [
       "ReactJS",
@@ -256,7 +256,7 @@ export const twitterArchive = [
     "title": "What happens when you spend 72 hours coding? This. \u{1f447} My new portfolio websit...",
     "content": "What happens when you spend 72 hours coding? This. \u{1f447}\nhttp://deepshekhar.dev\nMy new portfolio website, built from scratch with React.js . It was an absolute sprint, but I'm proud of the result and all the new things I learned. So worth it!\n#Developer #React #BuildIn3Days #Code",
     "images": [
-      "https://pbs.twimg.com/media/GyYQlQ_a4AclOn4.jpg"
+      "/twitter-media/1956269339193045332-GyYQlQ_a4AclOn4.jpg"
     ],
     "tags": [
       "Developer",
@@ -344,7 +344,7 @@ export const twitterArchive = [
     "title": "The UI for the prototype is being developed using typescript and VSCode exten...",
     "content": "The UI for the prototype is being developed using typescript and VSCode extension api's. Had some issues with icon so added custom svg's . Some bugs are still there and will be fixed soon .. stay tuned.. for the final UI of the prototype. #AgenticAI #startup #prototype",
     "images": [
-      "https://pbs.twimg.com/media/GsYT-VYXMAAue8B.jpg"
+      "/twitter-media/1929251467472318698-GsYT-VYXMAAue8B.jpg"
     ],
     "tags": [
       "AgenticAI",
