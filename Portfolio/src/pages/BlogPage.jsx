@@ -1,17 +1,49 @@
 import { useState } from "react";
 import Section from "../components/common/Section";
 import { blogPosts, twitterArchive } from "../data/blogData";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+
+const getSortDate = (post) => {
+  if (post.createdAt) {
+    return new Date(post.createdAt);
+  }
+  return new Date(post.date);
+};
+
+const getPostTitle = (post) => {
+  if (post.title) {
+    return post.title;
+  }
+  if (post.content) {
+    const firstLine = post.content.split("\n").find((line) => line.trim()) || post.content;
+    return firstLine.length > 80 ? `${firstLine.slice(0, 77)}...` : firstLine;
+  }
+  return post.type === "tweet" ? "Tweet" : "Blog Post";
+};
+
+const getExcerpt = (post) => {
+  if (!post.content) {
+    return "";
+  }
+  const cleaned = post.content.replace(/\s+/g, " ").trim();
+  if (cleaned.length <= 180) {
+    return cleaned;
+  }
+  return `${cleaned.slice(0, 177)}...`;
+};
 
 const BlogPage = () => {
-  const [expandedId, setExpandedId] = useState(null);
+  const [activePost, setActivePost] = useState(null);
 
   const allPosts = [...blogPosts, ...twitterArchive].sort((a, b) => {
-    return new Date(b.date) - new Date(a.date);
+    return getSortDate(b) - getSortDate(a);
   });
 
-  const toggleExpand = (id) => {
-    setExpandedId(expandedId === id ? null : id);
+  const openPost = (post) => {
+    setActivePost(post);
+  };
+
+  const closePost = () => {
+    setActivePost(null);
   };
 
   return (
@@ -22,96 +54,140 @@ const BlogPage = () => {
             <span className="text-purple">~~</span> blogging my journey <span className="text-purple">~~</span>
           </h3>
           
-          <div className="space-y-4">
-            {allPosts.map((post) => {
-              const isExpanded = expandedId === post.id;
-              
-              return (
-                <div 
+          <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 grid-orientation">
+            {allPosts.map((post) => (
+                <article 
                   key={post.id} 
-                  className={`border border-gray-700 rounded-lg bg-[#282c33] transition-all duration-300 shadow-lg overflow-hidden ${
-                    isExpanded ? "border-purple" : ""
-                  }`}
+                  className="border-2 border-gray-700 bdr transition-all duration-300 rounded-md overflow-hidden relative bg-[#282c33] min-h-[360px]"
                 >
-                  {/* Blog Strip (Header) */}
-                  <button 
-                    onClick={() => toggleExpand(post.id)}
-                    className="w-full flex justify-between items-center p-5 text-left hover:bg-white/5 transition-colors"
+                  <button
+                    onClick={() => openPost(post)}
+                    className="w-full h-full text-left hover:bg-white/5 transition-colors"
+                    aria-label={`Open ${getPostTitle(post)}`}
                   >
-                    <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
-                      <span className="text-gray-400 text-sm font-mono whitespace-nowrap">
-                        {post.date}
-                      </span>
-                      <h2 className={`text-lg sm:text-xl font-bold transition-colors ${
-                        isExpanded ? "text-purple" : "text-white"
-                      }`}>
-                        {post.title || (post.type === "tweet" ? "Twitter Archive Post" : "Blog Post")}
+                    {post.images && post.images.length > 0 && (
+                      <img
+                        src={post.images[0]}
+                        alt={`${getPostTitle(post)} cover`}
+                        className="w-full h-44 sm:h-48 object-cover border-b border-gray-700"
+                        loading="lazy"
+                        onError={(e) => {
+                          e.target.style.display = "none";
+                        }}
+                      />
+                    )}
+                    <div className="p-4 flex flex-col h-full">
+                      <div className="flex items-center justify-between text-gray-400 text-xs mb-2">
+                        <span className="font-mono">{post.date}</span>
+                        <div className="flex items-center gap-2">
+                          <span>{post.time}</span>
+                          {post.type === "tweet" && (
+                            <span className="text-purple text-[10px] font-medium italic px-2 py-0.5 border border-purple/30 rounded">
+                              Twitter
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <h2 className="text-lg sm:text-xl font-bold text-white mb-2">
+                        {getPostTitle(post)}
                       </h2>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      {post.type === "tweet" && (
-                        <span className="hidden md:inline text-purple text-xs font-medium italic px-2 py-0.5 border border-purple/30 rounded">
-                          Twitter
-                        </span>
-                      )}
-                      {isExpanded ? (
-                        <FiChevronUp className="text-purple text-xl" />
-                      ) : (
-                        <FiChevronDown className="text-gray-400 text-xl" />
+                      <p className="text-gray-400 text-sm leading-relaxed line-clamp-4">
+                        {getExcerpt(post)}
+                      </p>
+                      {post.tags && post.tags.length > 0 && (
+                        <div className="flex flex-wrap gap-2 mt-4">
+                          {post.tags.slice(0, 4).map((tag) => (
+                            <span key={tag} className="text-purple text-[10px] border border-purple px-2 py-1 rounded">
+                              #{tag}
+                            </span>
+                          ))}
+                        </div>
                       )}
                     </div>
                   </button>
-
-                  {/* Expanded Content */}
-                  <div className={`transition-all duration-500 ease-in-out ${
-                    isExpanded ? "max-h-[2000px] opacity-100 p-6 border-t border-gray-800" : "max-h-0 opacity-0 overflow-hidden"
-                  }`}>
-                    <div className="flex items-center text-gray-400 text-sm mb-6">
-                      <span>{post.time}</span>
-                      {post.type === "tweet" && (
-                        <>
-                          <span className="mx-2">•</span>
-                          <span className="text-purple font-medium italic md:hidden">Twitter Archive</span>
-                        </>
-                      )}
-                    </div>
-                    
-                    <p className="text-gray-300 whitespace-pre-wrap mb-6 leading-relaxed">
-                      {post.content}
-                    </p>
-
-                    {post.images && post.images.length > 0 && (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-                        {post.images.map((img, idx) => (
-                          <img 
-                            key={idx} 
-                            src={img} 
-                            alt={`Blog image ${idx + 1}`} 
-                            className="rounded-lg border border-gray-700 w-full h-auto object-cover max-h-[500px]"
-                            onError={(e) => {
-                              e.target.style.display = 'none';
-                            }}
-                          />
-                        ))}
-                      </div>
-                    )}
-
-                    {post.tags && (
-                      <div className="flex flex-wrap gap-2 mt-6">
-                        {post.tags.map((tag) => (
-                          <span key={tag} className="text-purple text-xs border border-purple px-2 py-1 rounded">
-                            #{tag}
-                          </span>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
+                </article>
+            ))}
           </div>
         </div>
       </Section>
+      {activePost && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <button
+            className="absolute inset-0 bg-black/60 backdrop-blur-md"
+            onClick={closePost}
+            aria-label="Close post overlay"
+          />
+          <div
+            className="relative w-[92%] max-w-3xl max-h-[85vh] overflow-y-auto rounded-xl border border-gray-700 bg-[#1f232a] shadow-2xl"
+            role="dialog"
+            aria-modal="true"
+          >
+            {activePost.images && activePost.images.length > 0 && (
+              <img
+                src={activePost.images[0]}
+                alt={`${getPostTitle(activePost)} cover`}
+                className="w-full max-h-80 object-cover border-b border-gray-700 rounded-t-xl"
+                onError={(e) => {
+                  e.target.style.display = "none";
+                }}
+              />
+            )}
+            <div className="p-6">
+              <div className="flex items-start justify-between gap-4 text-gray-400 text-sm mb-4">
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="font-mono">{activePost.date}</span>
+                  <span>•</span>
+                  <span>{activePost.time}</span>
+                  {activePost.type === "tweet" && (
+                    <span className="text-purple text-xs font-medium italic px-2 py-0.5 border border-purple/30 rounded">
+                      Twitter
+                    </span>
+                  )}
+                </div>
+                <button
+                  onClick={closePost}
+                  className="text-gray-300 hover:text-white bg-gray-800/80 rounded-full w-9 h-9 flex items-center justify-center"
+                  aria-label="Close post"
+                >
+                  x
+                </button>
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-white mb-4">
+                {getPostTitle(activePost)}
+              </h2>
+              <p className="text-gray-300 whitespace-pre-wrap mb-6 leading-relaxed">
+                {activePost.content}
+              </p>
+
+              {activePost.images && activePost.images.length > 1 && (
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+                  {activePost.images.slice(1).map((img, idx) => (
+                    <img
+                      key={idx}
+                      src={img}
+                      alt={`Blog image ${idx + 2}`}
+                      className="rounded-lg border border-gray-700 w-full h-auto object-cover max-h-[500px]"
+                      onError={(e) => {
+                        e.target.style.display = "none";
+                      }}
+                    />
+                  ))}
+                </div>
+              )}
+
+              {activePost.tags && activePost.tags.length > 0 && (
+                <div className="flex flex-wrap gap-2 mt-6">
+                  {activePost.tags.map((tag) => (
+                    <span key={tag} className="text-purple text-xs border border-purple px-2 py-1 rounded">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

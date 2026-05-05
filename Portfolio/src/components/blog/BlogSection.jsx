@@ -1,9 +1,29 @@
 import Section from "../common/Section";
-import { blogPosts } from "../../data/blogData";
+import { blogPosts, twitterArchive } from "../../data/blogData";
 import { NavLink } from "react-router-dom";
 
+const getSortDate = (post) => {
+  if (post.createdAt) {
+    return new Date(post.createdAt);
+  }
+  return new Date(post.date);
+};
+
+const getPostTitle = (post) => {
+  if (post.title) {
+    return post.title;
+  }
+  if (post.type === "tweet" && post.content) {
+    const firstLine = post.content.split("\n")[0];
+    return firstLine.length > 60 ? `${firstLine.slice(0, 60)}...` : firstLine;
+  }
+  return "Post";
+};
+
 const BlogSection = ({ limit = 2 }) => {
-  const recentPosts = blogPosts.slice(0, limit);
+  const recentPosts = [...blogPosts, ...twitterArchive]
+    .sort((a, b) => getSortDate(b) - getSortDate(a))
+    .slice(0, limit);
 
   return (
     <Section title="blog" id="blog">
@@ -16,7 +36,7 @@ const BlogSection = ({ limit = 2 }) => {
                 <span className="mx-2">•</span>
                 <span>{post.time}</span>
               </div>
-              <h3 className="text-xl font-bold text-white mb-3">{post.title}</h3>
+              <h3 className="text-xl font-bold text-white mb-3">{getPostTitle(post)}</h3>
               <p className="text-gray-400 line-clamp-3 mb-4">
                 {post.content}
               </p>

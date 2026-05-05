@@ -1,3 +1,5 @@
+import { twitterArchive } from "./twitterArchiveData";
+
 export const blogPosts = [
   {
     id: 1,
@@ -19,21 +21,4 @@ export const blogPosts = [
   }
 ];
 
-export const twitterArchive = [
-  {
-    id: "tw1",
-    date: "2023-12-15",
-    time: "08:00 PM",
-    content: "Just finished my first React project! It was a simple Todo list but I learned a lot about state and props. #ReactJS #CodingJourney",
-    images: [],
-    type: "tweet"
-  },
-  {
-    id: "tw2",
-    date: "2024-01-10",
-    time: "11:45 AM",
-    content: "Twitter shadow bans are annoying. Might move my updates to my own site soon. #Twitter #Shadowban",
-    images: [],
-    type: "tweet"
-  }
-];
+export { twitterArchive };
