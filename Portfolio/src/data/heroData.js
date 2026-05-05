@@ -11,10 +11,28 @@ export const heroData = {
   subText: "He crafts responsive websites where technologies meet creativity.",
   resumeUrl:
     "https://drive.google.com/file/d/1_jFcgdI_Tyky5O9DXF64o0oedzbUExoN/view?usp=sharing",
-  cta: {
-    label: "Contact Him -->",
-    to: "/contacts",
-  },
+  profileLinks: [
+    {
+      label: "GitHub",
+      url: "https://github.com/DSingh0304",
+    },
+    {
+      label: "LinkedIn",
+      url: "https://www.linkedin.com/in/deepshekharsingh/",
+    },
+    {
+      label: "LeetCode",
+      url: "https://leetcode.com/u/deep030604/",
+    },
+    {
+      label: "Medium",
+      url: "https://medium.com/@deepshekhar0306",
+    },
+    {
+      label: "X",
+      url: "https://x.com/DeepShekhar03",
+    },
+  ],
   images: [
     {
       key: "prop1",

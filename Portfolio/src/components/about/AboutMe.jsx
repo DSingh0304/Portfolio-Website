@@ -13,26 +13,6 @@ const AboutMe = ({ variant = "about" }) => {
           {variant == "about" && (
            <p className="text-gray-400 mb-8">{data.desc3}</p>
           )}
-          {data.profileLinks && data.profileLinks.length > 0 && (
-            <div className="mb-8">
-              <h4 className="text-white font-semibold mb-3">
-                Find me on
-              </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {data.profileLinks.map((link) => (
-                  <a
-                    key={link.label}
-                    href={link.url}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="px-4 py-2 border border-purple text-purple hover:bg-purple hover:text-white transition-colors"
-                  >
-                    {link.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-          )}
           
           {variant == "home" && (
             <a

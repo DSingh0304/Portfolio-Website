@@ -1,17 +1,8 @@
 import { heroData }  from "../../data/heroData";
-import { useScmmothScroll } from "../../hooks/useSmoothScroll";
 
 const Hero = ({ data = heroData }) => {
-  // Ensure hook is invoked to get the function
-  const scrollTo = useScmmothScroll();
-
-  const handleCTA = (e) => {
-    if(data.cta.to.startsWith('#')){
-      e.preventDefault();
-      scrollTo(data.cta.to);
-    }
-
-  }
+  const buttonClassName =
+    "inline-block px-5 sm:px-6 py-2.5 sm:py-3 border border-purple hover:text-white transition-colors font-semibold";
 
   return (
     <>
@@ -30,21 +21,33 @@ const Hero = ({ data = heroData }) => {
               <p className="text-gray-400 mb-6 sm:mb-8 max-w-md mx-auto md:mx-0">
                 {data.subText}
               </p>
-      <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
+      <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 flex-wrap justify-center md:justify-start">
                 {data.resumeUrl && (
                   <a
                     href={data.resumeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-        className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 border border-purple hover:text-white transition-colors font-semibold"
+        className={buttonClassName}
                   >
                     Resume
                   </a>
                 )}
-                <a href={data.cta.to} onClick={handleCTA}  className="inline-block px-5 sm:px-6 py-2.5 sm:py-3 border border-purple hover:text-white transition-colors font-semibold">
-                  {data.cta.label}
-                </a>
               </div>
+              {data.profileLinks && data.profileLinks.length > 0 && (
+                <div className="mt-4 flex flex-wrap items-center gap-3 sm:gap-4 justify-center md:justify-start">
+                  {data.profileLinks.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className={buttonClassName}
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
 

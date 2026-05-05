@@ -13,28 +13,6 @@ export const about = {
     label: "Read More",
     to: "/about",
   },
-  profileLinks: [
-    {
-      label: "GitHub",
-      url: "https://github.com/DSingh0304",
-    },
-    {
-      label: "LinkedIn",
-      url: "https://www.linkedin.com/in/deepshekharsingh/",
-    },
-    {
-      label: "LeetCode",
-      url: "https://leetcode.com/u/deep030604/",
-    },
-    {
-      label: "Medium",
-      url: "https://medium.com/@deepshekhar0306",
-    },
-    {
-      label: "X",
-      url: "https://x.com/DeepShekhar03",
-    },
-  ],
   images: [
     {
       key: "prop1",
