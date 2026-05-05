@@ -3,6 +3,9 @@ import { heroData }  from "../../data/heroData";
 const Hero = ({ data = heroData }) => {
   const buttonClassName =
     "inline-block px-5 sm:px-6 py-2.5 sm:py-3 border border-purple hover:text-white transition-colors font-semibold";
+  const primaryLabels = new Set(["Medium", "X"]);
+  const primaryLinks = (data.profileLinks || []).filter((link) => primaryLabels.has(link.label));
+  const secondaryLinks = (data.profileLinks || []).filter((link) => !primaryLabels.has(link.label));
 
   return (
     <>
@@ -32,10 +35,21 @@ const Hero = ({ data = heroData }) => {
                     Resume
                   </a>
                 )}
+                {primaryLinks.map((link) => (
+                  <a
+                    key={link.label}
+                    href={link.url}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={buttonClassName}
+                  >
+                    {link.label}
+                  </a>
+                ))}
               </div>
-              {data.profileLinks && data.profileLinks.length > 0 && (
+              {secondaryLinks.length > 0 && (
                 <div className="mt-4 flex flex-wrap items-center gap-3 sm:gap-4 justify-center md:justify-start">
-                  {data.profileLinks.map((link) => (
+                  {secondaryLinks.map((link) => (
                     <a
                       key={link.label}
                       href={link.url}
@@ -59,7 +73,7 @@ const Hero = ({ data = heroData }) => {
                 className="absolute bottom-2 right-2 max-w-full h-auto"
               ></img>
             </div>
-            <div className="relative w-48 sm:w-64 md:w-72 h-48 sm:h-64 md:h-72">
+            <div className="relative w-56 sm:w-72 md:w-80 h-56 sm:h-72 md:h-80">
               <img
                 src={data.imageMap.profile}
                 alt="A profile picture of Deep"

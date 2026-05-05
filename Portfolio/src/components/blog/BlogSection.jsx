@@ -9,6 +9,108 @@ const getSortDate = (post) => {
   return new Date(post.date);
 };
 
+const toTitleCase = (value) =>
+  value.replace(/\w\S*/g, (word) =>
+    word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()
+  );
+
+const humanizeTag = (tag) =>
+  String(tag)
+    .replace(/#/g, "")
+    .replace(/[_-]+/g, " ")
+    .replace(/([a-z])([A-Z])/g, "$1 $2")
+    .trim();
+
+const categoryRules = [
+  {
+    label: "Systems Design",
+    keywords: [
+      "system design",
+      "systemdesign",
+      "architecture",
+      "scalability",
+      "performance",
+      "distributed",
+      "microservice",
+      "idempotency",
+      "concurrency",
+    ],
+  },
+  {
+    label: "Backend",
+    keywords: [
+      "backend",
+      "api",
+      "server",
+      "node",
+      "express",
+      "prisma",
+      "postgres",
+      "postgresql",
+      "redis",
+      "queue",
+      "bullmq",
+      "socket",
+      "docker",
+    ],
+  },
+  {
+    label: "Open Source",
+    keywords: [
+      "open source",
+      "opensource",
+      "pull request",
+      "pr #",
+      "pr#",
+      "github",
+      "apache",
+      "apisix",
+      "contribute",
+      "merged",
+    ],
+  },
+  {
+    label: "Projects",
+    keywords: [
+      "project",
+      "built",
+      "build",
+      "application",
+      "app",
+      "website",
+      "demo",
+      "prototype",
+      "repo",
+    ],
+  },
+  {
+    label: "Learning",
+    keywords: ["learn", "learning", "study", "dsa", "course", "exam", "gsoc"],
+  },
+  {
+    label: "Career",
+    keywords: ["intern", "lead", "role", "joined", "team", "swe", "job", "hiring"],
+  },
+  {
+    label: "Community",
+    keywords: ["community", "students", "event", "discussion", "meetup", "college", "acm"],
+  },
+];
+
+const getPostCategory = (post) => {
+  if (post.tags && post.tags.length > 0) {
+    const tagLabel = humanizeTag(post.tags[0]);
+    return tagLabel ? toTitleCase(tagLabel) : "Update";
+  }
+  const text = [post.title, post.content].filter(Boolean).join(" ").toLowerCase();
+  for (const rule of categoryRules) {
+    if (rule.keywords.some((keyword) => text.includes(keyword))) {
+      return rule.label;
+    }
+  }
+  return post.type === "tweet" ? "Update" : "Blog";
+};
+
 const getPostTitle = (post) => {
   if (post.title) {
     return post.title;
@@ -67,9 +169,9 @@ const BlogSection = ({ limit = 3 }) => {
                   <span className="font-mono">{post.date}</span>
                   <div className="flex items-center gap-2">
                     <span>{post.time}</span>
-                    {post.type === "tweet" && (
+                    {getPostCategory(post) && (
                       <span className="text-purple text-[10px] font-medium italic px-2 py-0.5 border border-purple/30 rounded">
-                        Twitter
+                        {getPostCategory(post)}
                       </span>
                     )}
                   </div>

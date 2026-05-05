@@ -19,7 +19,12 @@ const ContactMe = () => {
             <h3 className="text-white font-semibold mb-3 sm:mb-4">{data.message}</h3>
             <div className="flex items-center gap-3 sm:gap-4">
              <MdEmail className="text-purple text-xl" />
-             <span className=" text-hover hover:cursor-pointer text-gray-400 break-all">{data.email}</span>
+             <a
+               href={`mailto:${data.email}`}
+               className="text-hover text-gray-400 break-all"
+             >
+               {data.email}
+             </a>
             </div>
             <div className="flex items-center gap-3 sm:gap-4 mt-2">
               <FaPhoneAlt className="text-purple text-xl" />
