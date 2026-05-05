@@ -9,6 +9,7 @@ import AboutPage from "./pages/AboutPage";
 import BlogPage from "./pages/BlogPage";
 import ContactPage from "./pages/ContactPage";
 import NotFoundPage from "./pages/NotFoundPage";
+import ExperiencePage from "./pages/ExperiencePage";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,7 @@ const router = createBrowserRouter([
       { path: "projects", element: <ProjectsPage /> },
       { path: "opensource", element: <OpenSourcePage /> },
       { path: "blog", element: <BlogPage /> },
+      { path: "experience", element: <ExperiencePage /> },
       { path: "about", element: <AboutPage /> },
       { path: "contacts", element: <ContactPage /> },
     ],

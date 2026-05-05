@@ -1,4 +1,5 @@
-import { heroData }  from "../../data/heroData";
+import { heroData } from "../../data/heroData";
+import { Link } from "react-router-dom";
 
 const Hero = ({ data = heroData }) => {
   const buttonClassName =
@@ -24,13 +25,13 @@ const Hero = ({ data = heroData }) => {
               <p className="text-gray-400 mb-6 sm:mb-8 max-w-md mx-auto md:mx-0">
                 {data.subText}
               </p>
-      <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 flex-wrap justify-center md:justify-start">
+              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 flex-wrap justify-center md:justify-start">
                 {data.resumeUrl && (
                   <a
                     href={data.resumeUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-        className={buttonClassName}
+                    className={buttonClassName}
                   >
                     Resume
                   </a>
@@ -62,6 +63,14 @@ const Hero = ({ data = heroData }) => {
                   ))}
                 </div>
               )}
+              <div className="mt-3 flex justify-center md:justify-start">
+                <Link
+                  to="/experience"
+                  className="text-purple font-semibold hover:underline"
+                >
+                  Experience ->
+                </Link>
+              </div>
             </div>
           </div>
 

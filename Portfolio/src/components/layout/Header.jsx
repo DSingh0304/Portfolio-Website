@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import logo from "/Logo.webp";
-import { FiHome, FiFolder, FiUser, FiMail, FiX, FiGitBranch, FiEdit3 } from "react-icons/fi";
+import { FiHome, FiFolder, FiUser, FiMail, FiX, FiGitBranch, FiEdit3, FiBriefcase } from "react-icons/fi";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -57,6 +57,9 @@ const Header = () => {
           </NavLink>
           <NavLink to="/blog" className={navLinkClasses}>
             <span className="text-purple">#</span>blog
+          </NavLink>
+          <NavLink to="/experience" className={navLinkClasses}>
+            <span className="text-purple">#</span>experience
           </NavLink>
           <NavLink to="/about" className={navLinkClasses}>
             <span className="text-purple">#</span>about
@@ -152,6 +155,16 @@ const Header = () => {
                 >
                   <FiEdit3 className="text-purple" />
                   <span>blog</span>
+                </NavLink>
+                <NavLink
+                  to="/experience"
+                  onClick={() => setMenuOpen(false)}
+                  className={({ isActive }) =>
+                    `${navLinkClasses({ isActive })} flex items-center gap-3 px-3 py-3 rounded hover:bg-white/5 active:bg-white/10`
+                  }
+                >
+                  <FiBriefcase className="text-purple" />
+                  <span>experience</span>
                 </NavLink>
                 <NavLink
                   to="/about"
