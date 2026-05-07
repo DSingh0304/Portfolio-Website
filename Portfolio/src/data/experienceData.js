@@ -15,6 +15,7 @@ export const workExperience = [
       "Engineered a robust testing architecture for Keploy's web ecosystem, focusing on comprehensive UI and routing validation through automated Playwright suites.",
     skills: ["Playwright", "API Mocking", "TypeScript", "E2E Testing"],
     iconLabel: "KP",
+    icon: "/icons_experience/Keploy.jpeg",
   },
   {
     id: "exp-apache",
@@ -32,6 +33,7 @@ export const workExperience = [
       "Active contributor to Apache APISIX, focusing on dashboard features, E2E testing infrastructure (SSL, Secrets, Protobufs), and production stability of cloud-scale platforms.",
     skills: ["TypeScript", "React", "Playwright", "CI/CD", "GitHub Actions"],
     iconLabel: "AS",
+    icon: "/icons_experience/Apisix.jpeg",
   },
   {
     id: "exp-yescity",
@@ -49,6 +51,7 @@ export const workExperience = [
       "Built and integrated secure API modules and real-time communication features, ensuring high performance across a distributed client-server architecture.",
     skills: ["Next.js", "Node.js", "WebSockets", "JWT", "PostgreSQL"],
     iconLabel: "YC",
+    icon: "/icons_experience/Yes City.jpeg",
   },
   {
     id: "exp-devteam",
@@ -66,6 +69,7 @@ export const workExperience = [
       "Responsible for the end-to-end delivery of campus-wide digital platforms, managing a team of developers and ensuring system scalability and reliability.",
     skills: ["Architecture", "System Design", "Node.js", "PostgreSQL", "Prisma"],
     iconLabel: "DT",
+    icon: "/icons_experience/iiituna_logo.jpeg",
   },
   {
     id: "exp-iitmandi",
@@ -83,6 +87,7 @@ export const workExperience = [
       "Led the technical overhaul of the lab's official website, focusing on performance optimization and a modern, user-centric design language.",
     skills: ["React", "UI/UX", "Performance Optimization", "CSS"],
     iconLabel: "IM",
+    icon: "/icons_experience/iitm.jpeg",
   },
   {
     id: "exp-acm",
@@ -100,6 +105,7 @@ export const workExperience = [
       "Responsible for the engineering roadmap of the ACM chapter, overseeing project execution and fostering a collaborative technical culture.",
     skills: ["Leadership", "Project Management", "Full Stack Development"],
     iconLabel: "AC",
+    icon: "/icons_experience/Acm.jpeg",
   },
   {
     id: "exp-aavesh",
@@ -117,6 +123,7 @@ export const workExperience = [
       "Directed the development and deployment of the festival's digital infrastructure, coordinating between frontend and backend teams for a unified participant experience.",
     skills: ["Project Management", "Web Development", "Team Coordination"],
     iconLabel: "AV",
+    icon: "/icons_experience/iiituna_logo.jpeg",
   },
 ];
 
@@ -134,6 +141,7 @@ export const education = [
     details:
       "Pursuing a degree in Information Technology with a strong emphasis on scalable system design and automated workflows.",
     iconLabel: "IU",
+    icon: "/icons_experience/iiituna_logo.jpeg",
   },
   {
     id: "edu-2",
@@ -148,5 +156,6 @@ export const education = [
     details:
       "Completed secondary education with a focus on mathematics and physics, laying the foundation for engineering studies.",
     iconLabel: "CM",
+    icon: "/icons_experience/CMS.jpeg",
   },
 ];

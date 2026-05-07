@@ -13,8 +13,12 @@ const TimelineItem = ({ item, onOpen }) => {
         aria-label={`Open ${item.organization} ${item.role} details`}
       >
         <div className="flex flex-col gap-4 sm:flex-row sm:items-start">
-          <div className="h-16 w-16 sm:h-20 sm:w-20 border border-gray-600 bg-[#1f232a] flex items-center justify-center text-xs sm:text-sm text-gray-300">
-            {item.iconLabel || "LOGO"}
+          <div className="h-16 w-16 sm:h-20 sm:w-20 border border-gray-600 bg-[#1f232a] flex items-center justify-center text-xs sm:text-sm text-gray-300 overflow-hidden shrink-0">
+            {item.icon ? (
+              <img src={item.icon} alt={item.organization} className="w-full h-full object-contain" />
+            ) : (
+              item.iconLabel || "LOGO"
+            )}
           </div>
           <div className="flex-1">
             <div className="flex flex-wrap items-start justify-between gap-3">
@@ -126,8 +130,12 @@ const ExperienceSection = ({ variant = "page", workLimit, educationLimit }) => {
             <div className="p-6">
               <div className="flex items-start justify-between gap-4 text-gray-400 text-sm mb-4">
                 <div className="flex items-center gap-3">
-                  <div className="h-14 w-14 border border-gray-600 bg-[#282c33] flex items-center justify-center text-xs text-gray-300">
-                    {activeItem.iconLabel || "LOGO"}
+                  <div className="h-14 w-14 border border-gray-600 bg-[#282c33] flex items-center justify-center text-xs text-gray-300 overflow-hidden shrink-0">
+                    {activeItem.icon ? (
+                      <img src={activeItem.icon} alt={activeItem.organization} className="w-full h-full object-contain" />
+                    ) : (
+                      activeItem.iconLabel || "LOGO"
+                    )}
                   </div>
                   <div>
                     <div className="text-white font-semibold text-lg">
