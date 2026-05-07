@@ -11,4 +11,5 @@ export const funFacts = [
   " I am a state level footballer. ",
   " Prefer systems design challenges ",
   " Focused on building scalable, maintainable software. ",
+  " Head of Engineering at ACM Student Chapter, IIIT Una. ",
 ];
