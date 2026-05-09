@@ -93,7 +93,7 @@ export const workExperience = [
     id: "exp-acm",
     organization: "IIITU ACM Student Chapter",
     role: "Head of Engineering",
-    period: "2024 - Present",
+    period: "Feb 2026 - Present",
     location: "IIIT Una",
     employmentType: "Leadership",
     summary: [
@@ -111,7 +111,7 @@ export const workExperience = [
     id: "exp-aavesh",
     organization: "AAVESH, IIIT Una",
     role: "Development Head",
-    period: "Feb 2024 - Apr 2024",
+    period: "July 2025 - Present",
     location: "Una, Himachal Pradesh",
     employmentType: "Leadership",
     summary: [
@@ -132,7 +132,7 @@ export const education = [
     id: "edu-1",
     organization: "Indian Institute of Information Technology, Una",
     role: "B.Tech in Information Technology",
-    period: "2024 - Present",
+    period: "2024 - 2028",
     location: "Himachal Pradesh, India",
     summary: [
       "Current CGPA: 8.0",
@@ -147,7 +147,7 @@ export const education = [
     id: "edu-2",
     organization: "City Montessori School, Lucknow",
     role: "High School (CISCE)",
-    period: "2022 - 2023",
+    period: "2021 - 2023",
     location: "Lucknow, India",
     summary: [
       "Percentage: 92%",
