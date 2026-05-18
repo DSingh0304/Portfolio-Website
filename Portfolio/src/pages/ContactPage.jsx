@@ -1,5 +1,5 @@
 import ContactMe from "../components/contacts/ContactMe";
-import ContactForm from "../components/contacts/ContactFrom";
+import ContactForm from "../components/contacts/ContactForm";
 
 const ContactPage = () => {
   return (
