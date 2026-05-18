@@ -184,6 +184,7 @@ const tweets = data
 
 const output = `export const twitterArchive = ${JSON.stringify(tweets, null, 2)};\n`;
 
+/* eslint-disable no-control-regex */
 const asciiOutput = output.replace(/[^\x00-\x7F]/gu, (char) => {
   const codePoint = char.codePointAt(0);
   if (!codePoint) {
@@ -194,6 +195,7 @@ const asciiOutput = output.replace(/[^\x00-\x7F]/gu, (char) => {
   }
   return `\\u{${codePoint.toString(16)}}`;
 });
+/* eslint-enable no-control-regex */
 
 fs.writeFileSync(outputPath, asciiOutput, "utf8");
 console.log(`Wrote ${tweets.length} tweets to ${outputPath}`);

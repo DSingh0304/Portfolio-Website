@@ -11,7 +11,6 @@ const OpenSourceCard = ({ project }) => {
     repoUrl,
     liveUrl,
     organization,
-    prNumber,
   } = project;
   const [showFullDesc, setShowFullDesc] = useState(false);
 

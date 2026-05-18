@@ -66,10 +66,68 @@ const TimelineItem = ({ item, onOpen }) => {
   );
 };
 
+const MONTHS = {
+  jan: 0, feb: 1, mar: 2, apr: 3, may: 4, jun: 5,
+  jul: 6, aug: 7, sep: 8, sept: 8, oct: 9, nov: 10, dec: 11
+};
+
+const parseDate = (dateStr) => {
+  if (!dateStr) return new Date(0);
+  const str = dateStr.trim().toLowerCase();
+  
+  if (str === "present") {
+    return new Date();
+  }
+  
+  const parts = str.split(/\s+/);
+  if (parts.length === 1) {
+    const year = parseInt(parts[0], 10);
+    return !isNaN(year) ? new Date(year, 0, 1) : new Date(0);
+  }
+  
+  if (parts.length === 2) {
+    const monthStr = parts[0];
+    const year = parseInt(parts[1], 10);
+    const month = MONTHS[monthStr] !== undefined ? MONTHS[monthStr] : 0;
+    return !isNaN(year) ? new Date(year, month, 1) : new Date(0);
+  }
+  
+  return new Date(0);
+};
+
+const parsePeriod = (period) => {
+  if (!period) return { start: new Date(0), end: new Date(0) };
+  const parts = period.split(/[-–]/);
+  const startStr = parts[0] ? parts[0].trim() : "";
+  const endStr = parts[1] ? parts[1].trim() : "";
+  
+  return {
+    start: parseDate(startStr),
+    end: parseDate(endStr)
+  };
+};
+
+const compareExperiences = (a, b) => {
+  const dateA = parsePeriod(a.period);
+  const dateB = parsePeriod(b.period);
+  
+  // Sort by start date descending (latest start date first)
+  if (dateB.start.getTime() !== dateA.start.getTime()) {
+    return dateB.start.getTime() - dateA.start.getTime();
+  }
+  
+  // If start dates are the same, sort by end date descending (latest end/present first)
+  return dateB.end.getTime() - dateA.end.getTime();
+};
+
 const ExperienceSection = ({ variant = "page", workLimit, educationLimit }) => {
   const [activeItem, setActiveItem] = useState(null);
-  const workItems = workLimit ? workExperience.slice(0, workLimit) : workExperience;
-  const educationItems = educationLimit ? education.slice(0, educationLimit) : education;
+  
+  const sortedWork = [...workExperience].sort(compareExperiences);
+  const sortedEducation = [...education].sort(compareExperiences);
+
+  const workItems = workLimit ? sortedWork.slice(0, workLimit) : sortedWork;
+  const educationItems = educationLimit ? sortedEducation.slice(0, educationLimit) : sortedEducation;
 
   const openItem = (item) => {
     setActiveItem(item);

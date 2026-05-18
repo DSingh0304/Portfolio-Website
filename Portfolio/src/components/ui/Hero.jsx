@@ -68,7 +68,7 @@ const Hero = ({ data = heroData }) => {
                   to="/experience"
                   className="text-purple font-semibold hover:underline"
                 >
-                  Experience ->
+                  Experience &rarr;
                 </Link>
               </div>
             </div>

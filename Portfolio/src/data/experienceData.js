@@ -1,5 +1,23 @@
 export const workExperience = [
   {
+    id: "exp-acm",
+    organization: "IIITU ACM Student Chapter",
+    role: "Head of Engineering",
+    period: "Feb 2026 - Present",
+    location: "IIIT Una",
+    employmentType: "Leadership",
+    summary: [
+      "Leading technical initiatives and engineering projects within the student chapter.",
+      "Mentoring junior developers and organizing technical workshops.",
+      "Driving the development of internal community tools.",
+    ],
+    details:
+      "Responsible for the engineering roadmap of the ACM chapter, overseeing project execution and fostering a collaborative technical culture.",
+    skills: ["Leadership", "Project Management", "Full Stack Development"],
+    iconLabel: "AC",
+    icon: "/icons_experience/Acm.jpeg",
+  },
+  {
     id: "exp-keploy",
     organization: "Keploy 🐰",
     role: "Open Source Contributor | Winter of Code 5.0",
@@ -54,6 +72,24 @@ export const workExperience = [
     icon: "/icons_experience/Yes City.jpeg",
   },
   {
+    id: "exp-aavesh",
+    organization: "AAVESH, IIIT Una",
+    role: "Development Head",
+    period: "July 2025 - Present",
+    location: "Una, Himachal Pradesh",
+    employmentType: "Leadership",
+    summary: [
+      "Led the technical team in building the official AAVESH 2024 festival website.",
+      "Managed event registrations and digital scheduling for thousands of participants.",
+      "Ensured seamless platform performance during high-traffic festival periods.",
+    ],
+    details:
+      "Directed the development and deployment of the festival's digital infrastructure, coordinating between frontend and backend teams for a unified participant experience.",
+    skills: ["Project Management", "Web Development", "Team Coordination"],
+    iconLabel: "AV",
+    icon: "/icons_experience/iiituna_logo.jpeg",
+  },
+  {
     id: "exp-devteam",
     organization: "Development Team, IIIT Una",
     role: "Full Stack Lead",
@@ -88,42 +124,6 @@ export const workExperience = [
     skills: ["React", "UI/UX", "Performance Optimization", "CSS"],
     iconLabel: "IM",
     icon: "/icons_experience/iitm.jpeg",
-  },
-  {
-    id: "exp-acm",
-    organization: "IIITU ACM Student Chapter",
-    role: "Head of Engineering",
-    period: "Feb 2026 - Present",
-    location: "IIIT Una",
-    employmentType: "Leadership",
-    summary: [
-      "Leading technical initiatives and engineering projects within the student chapter.",
-      "Mentoring junior developers and organizing technical workshops.",
-      "Driving the development of internal community tools.",
-    ],
-    details:
-      "Responsible for the engineering roadmap of the ACM chapter, overseeing project execution and fostering a collaborative technical culture.",
-    skills: ["Leadership", "Project Management", "Full Stack Development"],
-    iconLabel: "AC",
-    icon: "/icons_experience/Acm.jpeg",
-  },
-  {
-    id: "exp-aavesh",
-    organization: "AAVESH, IIIT Una",
-    role: "Development Head",
-    period: "July 2025 - Present",
-    location: "Una, Himachal Pradesh",
-    employmentType: "Leadership",
-    summary: [
-      "Led the technical team in building the official AAVESH 2024 festival website.",
-      "Managed event registrations and digital scheduling for thousands of participants.",
-      "Ensured seamless platform performance during high-traffic festival periods.",
-    ],
-    details:
-      "Directed the development and deployment of the festival's digital infrastructure, coordinating between frontend and backend teams for a unified participant experience.",
-    skills: ["Project Management", "Web Development", "Team Coordination"],
-    iconLabel: "AV",
-    icon: "/icons_experience/iiituna_logo.jpeg",
   },
 ];
 
