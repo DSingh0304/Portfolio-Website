@@ -14,6 +14,7 @@ export const bigProjects = [
     tags: ["fullstack", "saas", "automation", "real-time"],
     repoUrl: "https://github.com/DSingh0304/HostleSeatAllocation",
     liveUrl: null,
+    videoUrl: "https://youtu.be/bq9OE3Qubjo",
     createdAt: "May 2026",
     image: hostel,
     featured: true,

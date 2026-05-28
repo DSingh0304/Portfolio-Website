@@ -1,6 +1,28 @@
 import React, { useState } from "react";
 import { FiHelpCircle } from "react-icons/fi";
 
+const getYouTubeEmbedUrl = (url) => {
+  if (!url) return "";
+  try {
+    const parsed = new URL(url);
+    if (parsed.hostname === "youtu.be") {
+      return `https://www.youtube.com/embed/${parsed.pathname.replace("/", "")}`;
+    }
+    if (parsed.hostname.includes("youtube.com")) {
+      const videoId = parsed.searchParams.get("v");
+      if (videoId) {
+        return `https://www.youtube.com/embed/${videoId}`;
+      }
+      if (parsed.pathname.startsWith("/embed/")) {
+        return `https://www.youtube.com${parsed.pathname}`;
+      }
+    }
+  } catch (error) {
+    return url;
+  }
+  return url;
+};
+
 const ProjectCard = ({ project }) => {
   const {
     id,
@@ -10,9 +32,12 @@ const ProjectCard = ({ project }) => {
     tech,
     repoUrl,
     image,
-    liveUrl
+    liveUrl,
+    videoUrl
   } = project;
   const [showFullDesc, setShowFullDesc] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+  const videoEmbedUrl = getYouTubeEmbedUrl(videoUrl);
 
   return (
     <article
@@ -45,7 +70,7 @@ const ProjectCard = ({ project }) => {
                 <a
                   href={repoUrl}
                   target="_blank"
-                  className="inline-block w-28 text-center text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
+                  className="inline-block w-24 text-center text-sm px-3 py-2 border border-purple hover:text-white transition-colors"
                 >
                   Repo {">>"}
                 </a>
@@ -54,10 +79,19 @@ const ProjectCard = ({ project }) => {
                 <a
                   href={liveUrl}
                   target="_blank"
-                  className="inline-block w-28 text-center text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
+                  className="inline-block w-24 text-center text-sm px-3 py-2 border border-purple hover:text-white transition-colors"
                 >
                   Live {">>"}
                 </a>
+              )}
+              {videoUrl && (
+                <button
+                  type="button"
+                  onClick={() => setShowVideo(true)}
+                  className="inline-block w-24 text-center text-sm px-3 py-2 border border-purple hover:text-white transition-colors"
+                >
+                  Video
+                </button>
               )}
             </div>
             <button
@@ -80,6 +114,35 @@ const ProjectCard = ({ project }) => {
           >
             Back
           </button>
+        </div>
+      )}
+      {showVideo && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center">
+          <button
+            className="absolute inset-0 bg-black/60 backdrop-blur-md"
+            onClick={() => setShowVideo(false)}
+            aria-label="Close video"
+          />
+          <div
+            className="relative w-[92%] max-w-4xl aspect-video rounded-xl border border-gray-700 bg-[#1f232a] shadow-2xl"
+            role="dialog"
+            aria-modal="true"
+          >
+            <iframe
+              title={`${title} project video`}
+              src={videoEmbedUrl}
+              className="w-full h-full rounded-xl"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+            <button
+              onClick={() => setShowVideo(false)}
+              className="absolute -top-4 -right-4 text-gray-300 hover:text-white bg-gray-800/90 rounded-full w-10 h-10 flex items-center justify-center"
+              aria-label="Close video"
+            >
+              x
+            </button>
+          </div>
         </div>
       )}
     </article>
