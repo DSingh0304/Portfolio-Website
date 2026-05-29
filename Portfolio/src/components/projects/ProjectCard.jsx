@@ -33,7 +33,8 @@ const ProjectCard = ({ project }) => {
     repoUrl,
     image,
     liveUrl,
-    videoUrl
+    videoUrl,
+    blogUrl,
   } = project;
   const [showFullDesc, setShowFullDesc] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
@@ -92,6 +93,16 @@ const ProjectCard = ({ project }) => {
                 >
                   Video
                 </button>
+              )}
+              {blogUrl && (
+                <a
+                  href={blogUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-24 text-center text-sm px-3 py-2 border border-purple hover:text-white transition-colors"
+                >
+                  Medium
+                </a>
               )}
             </div>
             <button

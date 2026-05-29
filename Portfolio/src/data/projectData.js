@@ -13,6 +13,7 @@ export const bigProjects = [
     tech: ["Next.js", "React 19", "TypeScript", "Node.js", "Prisma", "PostgreSQL", "Socket.io", "Docker"],
     tags: ["fullstack", "saas", "automation", "real-time"],
     repoUrl: "https://github.com/DSingh0304/HostleSeatAllocation",
+    blogUrl: "https://medium.com/@deepshekhar0306/building-a-hostel-allocation-system-design-concurrency-and-deployment-7388a188804e",
     liveUrl: null,
     videoUrl: "https://youtu.be/bq9OE3Qubjo",
     createdAt: "May 2026",

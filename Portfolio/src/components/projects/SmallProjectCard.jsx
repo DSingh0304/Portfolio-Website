@@ -9,6 +9,7 @@ const SmallProjectCard = ({ project }) => {
     fullDesc,
     tech,
     repoUrl,
+    blogUrl,
   } = project;
   const [showFullDesc, setShowFullDesc] = useState(false);
 
@@ -49,6 +50,16 @@ const SmallProjectCard = ({ project }) => {
                   className="inline-block w-28 text-center text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
                 >
                   Live {">>"}
+                </a>
+              )}
+              {blogUrl && (
+                <a
+                  href={blogUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block w-28 text-center text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
+                >
+                  Medium
                 </a>
               )}
             </div>

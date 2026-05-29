@@ -347,6 +347,17 @@ const BlogPage = () => {
                 {activePost.content}
               </p>
 
+              {activePost.externalUrl && (
+                <a
+                  href={activePost.externalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center px-4 py-2 border border-purple font-semibold rounded hover:bg-purple hover:text-white transition-colors mb-6"
+                >
+                  Read on Medium &rarr;
+                </a>
+              )}
+
               {activePost.images && activePost.images.length > 1 && (
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
                   {activePost.images.slice(1).map((img, idx) => (

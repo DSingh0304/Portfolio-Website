@@ -1,6 +1,20 @@
+import hostel from "../assets/HostelAllocationSystem.png";
 import { twitterArchive } from "./twitterArchiveData";
 
 export const blogPosts = [
+  {
+    id: 3,
+    title: "Building a Hostel Allocation System",
+    date: "2026-05-29",
+    time: "09:00 AM",
+    content:
+      "I built a hostel allocation system that handles real-time seat allocation, role-based access, concurrency-safe booking, and deployment-ready infrastructure. The full write-up covers the design choices, concurrency controls, and deployment flow behind the project. Read the full Medium post for the complete breakdown.",
+    images: [hostel],
+    tags: ["systemdesign", "concurrency", "projects"],
+    externalUrl:
+      "https://medium.com/@deepshekhar0306/building-a-hostel-allocation-system-design-concurrency-and-deployment-7388a188804e",
+    createdAt: "2026-05-29T03:30:00.000Z",
+  },
   {
     id: 1,
     title: "Starting my Portfolio Website",
