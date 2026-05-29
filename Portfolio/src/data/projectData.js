@@ -6,10 +6,10 @@ import hostel from "../assets/HostelAllocationSystem.png";
 export const bigProjects = [
   {
     id: "resident-iq",
-    title: "ResidentIQ",
+    title: "Hostel Allocation System",
     shortDesc: "A production-grade smart hostel allocation platform.",
     fullDesc:
-      "ResidentIQ is a comprehensive hostel seat allocation platform designed for educational institutions to provide a transparent, automated room allocation process. It features role-based access for students, wardens, and admins, real-time updates via WebSockets, and a robust background task processing system for notifications and approvals.",
+      "This is a comprehensive hostel seat allocation platform designed for educational institutions to provide a transparent, automated room allocation process. It features role-based access for students, wardens, and admins, real-time updates via WebSockets, and a robust background task processing system for notifications and approvals.",
     tech: ["Next.js", "React 19", "TypeScript", "Node.js", "Prisma", "PostgreSQL", "Socket.io", "Docker"],
     tags: ["fullstack", "saas", "automation", "real-time"],
     repoUrl: "https://github.com/DSingh0304/HostleSeatAllocation",
