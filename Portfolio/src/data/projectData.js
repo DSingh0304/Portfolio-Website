@@ -22,21 +22,6 @@ export const bigProjects = [
     smallProject: false,
   },
   {
-    id: "streamify",
-    title: "Streamify",
-    shortDesc: "A social media platform for chatting and videocall.",
-    fullDesc:
-      "The Video Chat Application is a full-stack web project that goes beyond just video calls. It is a comprehensive social platform built with React and Node.js that includes features for real-time video communication, direct messaging, and making friends. It is designed to be a unified space for users to connect and interact seamlessly.",
-    tech: ["Node.js", "React.js", "Express.js", "MongoDB"],
-    tags: ["restapi", "social-media", "video-chat", "chat-app"],
-    repoUrl: "https://github.com/DSingh0304/VideoChatApplication",
-    liveUrl: "https://videochatapplication-wvfk.onrender.com/login",
-    createdAt: "Aug 2025",
-    image: streamify,
-    featured: true,
-    smallProject: false,
-  },
-  {
     id: "iiit-una-website",
     title: "IIIT Una Official Website",
     shortDesc: "Maintained and enhanced the official IIIT Una website.",
@@ -54,6 +39,21 @@ export const bigProjects = [
 ];
 
 export const smallProject = [
+  {
+    id: "streamify",
+    title: "Streamify",
+    shortDesc: "A social media platform for chatting and videocall.",
+    fullDesc:
+      "The Video Chat Application is a full-stack web project that goes beyond just video calls. It is a comprehensive social platform built with React and Node.js that includes features for real-time video communication, direct messaging, and making friends. It is designed to be a unified space for users to connect and interact seamlessly.",
+    tech: ["Node.js", "React.js", "Express.js", "MongoDB"],
+    tags: ["restapi", "social-media", "video-chat", "chat-app"],
+    repoUrl: "https://github.com/DSingh0304/VideoChatApplication",
+    liveUrl: null,
+    createdAt: "Aug 2025",
+    image: streamify,
+    featured: true,
+    smallProject: true,
+  },
   {
     id: "dhanvantri-project",
     title: "Dhanvantri",
