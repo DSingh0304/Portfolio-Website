@@ -39,7 +39,7 @@ export const workExperience = [
     id: "exp-apache",
     organization: "Apache Software Foundation",
     role: "Open Source Contributor",
-    period: "Oct 2025 - Present",
+    period: "Oct 2025 - Apr 2026",
     location: "Online",
     employmentType: "Open Source",
     summary: [
