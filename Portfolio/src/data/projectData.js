@@ -5,6 +5,23 @@ import hostel from "../assets/HostelAllocationSystem.png";
 
 export const bigProjects = [
   {
+    id: "balance-engine",
+    title: "BalanceEngine",
+    shortDesc: "A production-grade double-entry ledger and balance engine inspired by Stripe and Razorpay.",
+    fullDesc:
+      "BalanceEngine solves the hardest problems in fintech engineering. Balances are never stored as columns — they are dynamically computed from an immutable stream of balanced debit/credit ledger entries. A PostgreSQL trigger enforces database-level immutability, preventing any UPDATE or DELETE on history. Pessimistic locking (SELECT FOR UPDATE in deterministic sorted order) prevents race conditions and deadlocks during concurrent transfers. A Redis-backed idempotency middleware ensures every transaction runs exactly once, even on retries. Real-time balance feeds are delivered via Socket.io rooms + Redis Pub/Sub without polling. Cursor-based pagination with SQL window functions provides stable running balances safe under concurrent writes.",
+    tech: ["Node.js", "Express", "TypeScript", "PostgreSQL", "Redis", "Socket.io", "Zod", "React"],
+    tags: ["fullstack", "fintech", "real-time", "system-design"],
+    repoUrl: "https://github.com/DSingh0304/BalanceEngine",
+    blogUrl: "https://medium.com/@deepshekhar0306/how-financial-systems-handle-transactions-4816423f9e32",
+    liveUrl: null,
+    videoUrl: null,
+    createdAt: "July 2026",
+    image: "/icons_experience/BE.png",
+    featured: true,
+    smallProject: false,
+  },
+  {
     id: "resident-iq",
     title: "Hostel Allocation System",
     shortDesc: "A production-grade smart hostel allocation platform.",
