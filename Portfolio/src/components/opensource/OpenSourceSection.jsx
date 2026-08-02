@@ -4,7 +4,8 @@ import {
   apacheApisixProjects, 
   rocketChatProjects, 
   zulipProjects, 
-  keployProjects, 
+  keployProjects,
+  apicurioProjects,
   allOpenSourceProjects 
 } from "../../data/opensourceData";
 import Section from "../common/Section";
@@ -97,6 +98,11 @@ const OpenSourceSection = ({
     return orderByTokens(list, queryTokens, variant === "opensource");
   }, [orgFilter, queryTokens, variant]);
 
+  const orderedApicurio = orderByTokens(
+    apicurioProjects,
+    queryTokens,
+    variant === "opensource"
+  );
   const orderedApacheApisix = orderByTokens(
     apacheApisixProjects,
     queryTokens,
@@ -157,6 +163,15 @@ const OpenSourceSection = ({
               </div>
             ) : (
               <>
+                <h2 className="text-xl sm:text-2xl md:text-3xl my-6 sm:my-10 font-bold text-white mb-6 sm:mb-10 text-center md:text-right">
+                  <span className="text-purple">@</span>Apicurio Registry
+                </h2>
+                <div className="grid gap-6 sm:gap-8 md:grid-cols-2 lg:grid-cols-3 grid-orientation mb-12">
+                  {orderedApicurio.map((p) => (
+                    <OpenSourceCard key={p.id} project={p} />
+                  ))}
+                </div>
+
                 <h2 className="text-xl sm:text-2xl md:text-3xl my-6 sm:my-10 font-bold text-white mb-6 sm:mb-10 text-center md:text-right">
                   <span className="text-purple">@</span>Apache Apisix
                 </h2>

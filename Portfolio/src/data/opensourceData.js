@@ -460,9 +460,29 @@ export const keployProjects = [
   },
 ];
 
+export const apicurioProjects = [
+  {
+    id: "apicurio-pr-1",
+    title: "PR #9074: fix(http): accept all 2xx responses and restore interrupt flag",
+    organization: "Apicurio Registry",
+    shortDesc: "Fixed webhook delivery bugs in HttpClientService — 2xx range acceptance and interrupt flag restoration.",
+    fullDesc:
+      "Fixed two interconnected bugs in HttpClientService.post() that were breaking webhook delivery. First, only HTTP 200 was treated as success — 201, 202, 204 all threw HttpClientException, triggering @Retry with 8 retries despite the request succeeding. Fixed by accepting the full 200–299 range. Second, InterruptedException was caught without restoring the interrupt flag, causing interrupted calls to spin through all 8 retries. Introduced HttpClientInterruptedException extending HttpClientException, scoped abortOn narrowly so 5xx errors still retry. Added a Vert.x stub server integration test with dynamic port allocation. PR went through multiple rigorous review rounds with Apicurio core maintainers.",
+    tech: ["Java", "Quarkus", "Vert.x", "JUnit 5", "SmallRye Fault Tolerance"],
+    tags: ["opensource", "bugfix", "java", "webhooks"],
+    repoUrl: "https://github.com/Apicurio/apicurio-registry/pull/9074",
+    liveUrl: null,
+    createdAt: "Jul 2026",
+    featured: true,
+    prNumber: "#9074",
+    status: "open",
+  },
+];
+
 export const allOpenSourceProjects = [
   ...apacheApisixProjects,
   ...zulipProjects,
   ...rocketChatProjects,
   ...keployProjects,
+  ...apicurioProjects,
 ];
