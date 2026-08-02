@@ -467,7 +467,7 @@ export const apicurioProjects = [
     organization: "Apicurio Registry",
     shortDesc: "Fixed webhook delivery bugs in HttpClientService — 2xx range acceptance and interrupt flag restoration.",
     fullDesc:
-      "Fixed two interconnected bugs in HttpClientService.post() that were breaking webhook delivery. Only HTTP 200 was treated as success — 201, 202, 204 all threw HttpClientException, triggering @Retry with 8 retries despite the request succeeding. Fixed by accepting the full 200–299 range. InterruptedException was caught without restoring the interrupt flag, causing interrupted calls to spin through all 8 retries. Introduced HttpClientInterruptedException extending HttpClientException so abortOn is scoped narrowly — 5xx still retries. Added a Vert.x stub server integration test with dynamic port allocation. PR went through rigorous multi-round review with Apicurio core maintainers.",
+      "Fixed two interconnected bugs in HttpClientService.post() that were breaking webhook delivery. Only HTTP 200 was treated as success, so 201, 202, and 204 all threw HttpClientException and triggered @Retry with 8 retries despite the request succeeding. Fixed by accepting the full 200–299 range with a null return for empty bodies. InterruptedException was being caught without restoring the interrupt flag, causing interrupted calls to spin through all 8 retries. Introduced HttpClientInterruptedException extending HttpClientException so abortOn is scoped narrowly and 5xx errors still retry. Added a Vert.x stub server integration test with dynamic port allocation. The PR went through rigorous multi-round review with core Apicurio maintainers.",
     tech: ["Java", "Quarkus", "Vert.x", "JUnit 5", "SmallRye Fault Tolerance"],
     tags: ["opensource", "bugfix", "java", "webhooks"],
     repoUrl: "https://github.com/Apicurio/apicurio-registry/pull/9074",
@@ -478,11 +478,11 @@ export const apicurioProjects = [
   },
   {
     id: "apicurio-pr-2",
-    title: "PR #8934: fix(rest): clamp pagination parameters to prevent integer overflow",
+    title: "PR #8934: fix(rest): clamp pagination to prevent integer overflow",
     organization: "Apicurio Registry",
     shortDesc: "Fixed integer overflow crash in REST pagination endpoints causing HTTP 500.",
     fullDesc:
-      "Resolved integer overflow crashes in WellKnownResourceImpl.getEntitledAgents and SubjectsResourceImpl.getSubjectVersions. When users supplied Integer.MAX_VALUE as a limit with a positive offset, the int arithmetic overflowed to a negative number, causing List.subList to throw an unhandled exception returning HTTP 500. Fixed by widening effectiveOffset + effectiveLimit to long before the Math.min call, clamping offset >= 0, and capping getEntitledAgents limit to 500 to match the existing searchAgents convention. Added regression tests creating 3 versions each so the subList path is actually exercised — the initial tests were correctly flagged by the reviewer and tightened accordingly. Merged by Eric Wittmann.",
+      "Resolved integer overflow crashes in WellKnownResourceImpl.getEntitledAgents and SubjectsResourceImpl.getSubjectVersions. When users supplied Integer.MAX_VALUE as a limit with a positive offset, the int arithmetic overflowed to a negative number causing List.subList to throw and return HTTP 500. Fixed by widening effectiveOffset plus effectiveLimit to long before the Math.min call, clamping offset to be non-negative, and capping the entitledAgents limit to 500 to match the existing searchAgents convention. Added regression tests that create 3 versions each so the subList path is actually exercised. The initial tests were correctly flagged by the reviewer as not hitting the throwing branch and were tightened. Merged by Eric Wittmann.",
     tech: ["Java", "Quarkus", "JUnit 5", "REST API"],
     tags: ["opensource", "bugfix", "java", "pagination"],
     repoUrl: "https://github.com/Apicurio/apicurio-registry/pull/8934",
@@ -493,11 +493,11 @@ export const apicurioProjects = [
   },
   {
     id: "apicurio-pr-3",
-    title: "PR #8695: fix(version): add content-disposition header and file extension for v3 content downloads",
+    title: "PR #8695: fix(version): add content-disposition header for v3 downloads",
     organization: "Apicurio Registry",
     shortDesc: "Added Content-Disposition headers with correct file extensions to v3 content download endpoints.",
     fullDesc:
-      "Fixed the issue where downloading artifacts via /content endpoints produced files with no extension. Added a ContentTypes.getFileExtension helper that maps MIME types (including parameterized types like 'application/json; charset=utf-8') to extensions. Implemented a centralized buildContentDisposition sanitizer in AbstractResourceImpl that strips injection-risk characters (quotes, backslashes, percent, CRLF) while preserving valid characters like forward slashes per RFC 6266. Updated GroupsResourceImpl and IdsResourceImpl to set the header on all v3 download endpoints. Added comprehensive test coverage for sanitization, truncation, and all content types. Merged by Eric Wittmann after review by Paolo Antinori and Carles Arnal.",
+      "Fixed the issue where downloading artifacts via the /content endpoints produced files with no extension. Added ContentTypes.getFileExtension which maps MIME types including parameterized ones like 'application/json; charset=utf-8' to their corresponding extensions. Built a centralized buildContentDisposition sanitizer in AbstractResourceImpl that strips injection-risk characters like quotes, backslashes, percent signs, and CRLF while preserving valid characters per RFC 6266. Updated GroupsResourceImpl and IdsResourceImpl to set the header on all v3 download endpoints. Added comprehensive test coverage for sanitization, truncation, and each content type. Reviewed by Paolo Antinori and Carles Arnal, merged by Eric Wittmann.",
     tech: ["Java", "Quarkus", "JAX-RS", "HTTP", "REST API"],
     tags: ["opensource", "bugfix", "java", "security"],
     repoUrl: "https://github.com/Apicurio/apicurio-registry/pull/8695",
@@ -512,7 +512,7 @@ export const apicurioProjects = [
     organization: "Apicurio Registry",
     shortDesc: "Fixed CLI inconsistencies with the implicit default group — display normalization, CRUD guards, and null-safe conversions.",
     fullDesc:
-      "The Apicurio Registry CLI had multiple inconsistencies around the implicit 'default' group. CLI output tables showed blank spaces instead of 'default' for the group ID. CRUD operations on the default group attempted direct API calls that the server rejects. Fixed by centralizing the default-group check in IdUtil.isDefaultGroup() and displayGroupId(), guarding all four group commands (create, delete, get, update) against operations on the implicit group, normalizing display output across ArtifactCommand, VersionCommand, SearchUtil, and others. Added null-safe date conversions in Conversions.java. Went through a rigorous 8-finding code review from Eric Wittmann, addressed all findings, and was merged. A follow-up E2E review by vandanayadav7 surfaced additional improvements for a subsequent PR.",
+      "The Apicurio Registry CLI had multiple inconsistencies around the implicit default group. Output tables showed blank spaces instead of 'default' for the group ID and CRUD operations on the default group attempted direct API calls that the server rejects with a 404. Fixed by centralizing the default-group check in IdUtil.isDefaultGroup and displayGroupId, guarding all four group commands against operations on the implicit group, and normalizing display output across ArtifactCommand, VersionCommand, SearchUtil, and several other commands. Added null-safe date conversions in Conversions.java. Went through a rigorous 8-finding code review from Eric Wittmann with all findings addressed. A follow-up E2E review from a maintainer who tested against a live registry with Podman surfaced additional improvements shipped in a subsequent PR.",
     tech: ["Java", "Quarkus", "CLI", "Picocli"],
     tags: ["opensource", "bugfix", "java", "cli"],
     repoUrl: "https://github.com/Apicurio/apicurio-registry/pull/8668",
