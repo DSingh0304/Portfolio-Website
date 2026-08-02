@@ -14,7 +14,7 @@ export const blogPosts = [
       "I have been contributing to Apicurio Registry over the past few weeks — fixing webhook delivery bugs, working through thorough code reviews with the maintainers, and picking up a solid understanding of how the registry's event and storage layers are designed. The experience has been genuinely valuable, and I want to go deeper.\n\n" +
       "The project I am targeting is the Webhooks project under Apicurio Registry. Webhooks are at the center of how the registry propagates events externally, and there is meaningful work to be done there. My existing contributions in that exact part of the codebase — specifically fixing how HttpClientService handles 2xx responses and interrupt propagation during webhook delivery — feel like a natural setup for this.\n\n" +
       "Registrations open tomorrow. I have done the prep work, I know the codebase, and I am genuinely excited about the direction. Let's see what happens.",
-    images: ["/icons_experience/Apisix.jpeg"],
+    images: ["/icons_experience/apicurio.png"],
     tags: ["lfx", "mentorship", "opensource", "apicurio"],
     createdAt: "2026-08-02T22:00:00.000Z",
   },
