@@ -22,7 +22,7 @@ export const heroData = {
     },
     {
       label: "LeetCode",
-      url: "https://leetcode.com/u/deep030604/",
+      url: "https://leetcode.com/u/deep_0306/",
     },
     {
       label: "Medium",
