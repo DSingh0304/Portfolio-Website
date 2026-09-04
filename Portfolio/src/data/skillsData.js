@@ -1,5 +1,16 @@
 export const skills = [
   {
+    id: "9",
+    title: "Agentic AI & GenAI",
+    content: [
+      "LangGraph: stateful multi-step agent pipelines with human-in-the-loop gates.",
+      "LLM integration: Groq, OpenAI APIs, prompt engineering and tool calling.",
+      "MCP (Model Context Protocol): connecting agents to external services.",
+      "RAG patterns: retrieval-augmented generation and vector stores.",
+      "AI-native system design: guardrails, audit trails, and cost controls.",
+    ],
+  },
+  {
     id: "1",
     title: "Backend Development",
     content: [

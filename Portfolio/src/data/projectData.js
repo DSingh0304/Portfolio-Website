@@ -5,6 +5,23 @@ import hostel from "../assets/HostelAllocationSystem.png";
 
 export const bigProjects = [
   {
+    id: "payagent-core",
+    title: "PayAgent",
+    shortDesc: "An AI-native commerce protocol — autonomous agents that browse, build a cart, and pay using LangGraph + Razorpay MCP.",
+    fullDesc:
+      "PayAgent is an autonomous shopping assistant that accepts natural language goals (e.g., 'Buy running shoes under ₹2000'). A LangGraph state machine independently queries a Go-backed product catalog, builds a shopping cart, and presents a Razorpay checkout session to the user — with spending guardrails enforced at every step.\n\nKey engineering highlights: Live Cart Context Injection keeps the agent grounded by querying Redis for real-time cart state, preventing hallucinations. Tenacity-backed exponential backoffs handle API rate limits gracefully. The final payment approval is delegated to the human via a strict human-in-the-loop gate. Every agent action is streamed to the Next.js dashboard in real time via Server-Sent Events over Redis Pub/Sub. Razorpay's official MCP (Model Context Protocol) server handles secure payment intent creation.",
+    tech: ["Python", "LangGraph", "Go", "Next.js", "PostgreSQL", "Redis", "Razorpay MCP", "Groq"],
+    tags: ["agentic-ai", "fintech", "fullstack", "llm", "mcp"],
+    repoUrl: "https://github.com/DSingh0304/payagent-core",
+    liveUrl: null,
+    videoUrl: null,
+    blogUrl: null,
+    createdAt: "September 2026",
+    image: "/icons_experience/payagent.png",
+    featured: true,
+    smallProject: false,
+  },
+  {
     id: "balance-engine",
     title: "BalanceEngine",
     shortDesc: "A production-grade double-entry ledger and balance engine inspired by Stripe and Razorpay.",

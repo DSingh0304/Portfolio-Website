@@ -5,6 +5,19 @@ const iitgSummerSchoolImage = "/icons_experience/IITG.png";
 
 export const blogPosts = [
   {
+    id: 8,
+    title: "LeetCode Progress Update",
+    date: "2026-09-04",
+    time: "08:00 PM",
+    content:
+      "Sharing a progress update on my LeetCode journey. Consistency has been the key — showing up daily, grinding through data structures and algorithms, and building the habit of structured problem-solving.\n\n" +
+      "Every problem solved is another pattern internalized. The focus is on understanding concepts deeply rather than just chasing numbers — trees, graphs, dynamic programming, sliding window — working through them methodically.\n\n" +
+      "The grind continues.",
+    images: ["/icons_experience/LC Update.png"],
+    tags: ["dsa", "leetcode", "consistency", "learning"],
+    createdAt: "2026-09-04T14:00:00.000Z",
+  },
+  {
     id: 7,
     title: "Targeting LFX Mentorship under Apicurio Registry — Webhooks Project",
     date: "2026-08-02",
