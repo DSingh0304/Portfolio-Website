@@ -1,15 +1,14 @@
 import dhanvantri from "../assets/dhanvantri.webp";
-import streamify from "../assets/streamify.png";
-import iiituna from "../assets/iiituna.webp";
-import hostel from "../assets/HostelAllocationSystem.png";
+import streamify from "../assets/streamify.webp";
+import hostel from "../assets/HostelAllocationSystem.webp";
 
 export const bigProjects = [
   {
     id: "payagent-core",
     title: "PayAgent",
-    shortDesc: "An AI-native commerce protocol — autonomous agents that browse, build a cart, and pay using LangGraph + Razorpay MCP.",
+    shortDesc: "An AI-native commerce protocol autonomous agents that browse, build a cart, and pay using LangGraph + Razorpay MCP.",
     fullDesc:
-      "PayAgent is an autonomous shopping assistant that accepts natural language goals (e.g., 'Buy running shoes under ₹2000'). A LangGraph state machine independently queries a Go-backed product catalog, builds a shopping cart, and presents a Razorpay checkout session to the user — with spending guardrails enforced at every step.\n\nKey engineering highlights: Live Cart Context Injection keeps the agent grounded by querying Redis for real-time cart state, preventing hallucinations. Tenacity-backed exponential backoffs handle API rate limits gracefully. The final payment approval is delegated to the human via a strict human-in-the-loop gate. Every agent action is streamed to the Next.js dashboard in real time via Server-Sent Events over Redis Pub/Sub. Razorpay's official MCP (Model Context Protocol) server handles secure payment intent creation.",
+      "PayAgent is an autonomous shopping assistant that accepts natural language goals (e.g., 'Buy running shoes under ₹2000'). A LangGraph state machine independently queries a Go-backed product catalog, builds a shopping cart, and presents a Razorpay checkout session to the user with spending guardrails enforced at every step.\n\nKey engineering highlights: Live Cart Context Injection keeps the agent grounded by querying Redis for real-time cart state, preventing hallucinations. Tenacity-backed exponential backoffs handle API rate limits gracefully. The final payment approval is delegated to the human via a strict human-in-the-loop gate. Every agent action is streamed to the Next.js dashboard in real time via Server-Sent Events over Redis Pub/Sub. Razorpay's official MCP (Model Context Protocol) server handles secure payment intent creation.",
     tech: ["Python", "LangGraph", "Go", "Next.js", "PostgreSQL", "Redis", "Razorpay MCP", "Groq"],
     tags: ["agentic-ai", "fintech", "fullstack", "llm", "mcp"],
     repoUrl: "https://github.com/DSingh0304/payagent-core",
@@ -17,7 +16,7 @@ export const bigProjects = [
     videoUrl: "https://www.youtube.com/watch?v=yTQKCm-gQVM&feature=youtu.be",
     blogUrl: "https://medium.com/@deepshekhar0306/building-payagent-an-autonomous-shopping-agent-ff82ede30996",
     createdAt: "September 2026",
-    image: "/icons_experience/payagent.png",
+    image: "/icons_experience/payagent.webp",
     featured: true,
     smallProject: false,
   },
@@ -34,7 +33,7 @@ export const bigProjects = [
     liveUrl: null,
     videoUrl: null,
     createdAt: "July 2026",
-    image: "/icons_experience/BE.png",
+    image: "/icons_experience/BE.webp",
     featured: true,
     smallProject: false,
   },
@@ -53,21 +52,6 @@ export const bigProjects = [
     createdAt: "May 2026",
     image: hostel,
     featured: true,
-    smallProject: false,
-  },
-  {
-    id: "iiit-una-website",
-    title: "IIIT Una Official Website",
-    shortDesc: "Maintained and enhanced the official IIIT Una website.",
-    fullDesc:
-      "Played a key role in the maintenance of the official IIIT Una website. My responsibilities included ensuring high website availability and uptime, debugging and resolving critical technical issues, and implementing new features to enhance functionality. I also performed regular security patches and system updates, and collaborated on continuous performance improvement. This experience involved working on a full-stack application, ensuring the site remained secure, fast, and user-friendly.",
-    tech: ["MERN Stack", "React.js", "Node.js", "Express.js", "MongoDB", "Git"],
-    tags: ["fullstack", "maintenance", "collaboration", "website"],
-    repoUrl: null,
-    liveUrl: "https://iiitu.ac.in/",
-    image: iiituna,
-    featured: true,
-    createdAt: "April 2025",
     smallProject: false,
   },
 ];

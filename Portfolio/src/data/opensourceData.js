@@ -465,7 +465,7 @@ export const apicurioProjects = [
     id: "apicurio-pr-1",
     title: "PR #9074: fix(http): accept all 2xx responses and restore interrupt flag",
     organization: "Apicurio Registry",
-    shortDesc: "Fixed webhook delivery bugs in HttpClientService — 2xx range acceptance and interrupt flag restoration.",
+    shortDesc: "Fixed webhook delivery bugs in HttpClientService 2xx range acceptance and interrupt flag restoration.",
     fullDesc:
       "Fixed two interconnected bugs in HttpClientService.post() that were breaking webhook delivery. Only HTTP 200 was treated as success, so 201, 202, and 204 all threw HttpClientException and triggered @Retry with 8 retries despite the request succeeding. Fixed by accepting the full 200–299 range with a null return for empty bodies. InterruptedException was being caught without restoring the interrupt flag, causing interrupted calls to spin through all 8 retries. Introduced HttpClientInterruptedException extending HttpClientException so abortOn is scoped narrowly and 5xx errors still retry. Added a Vert.x stub server integration test with dynamic port allocation. The PR went through rigorous multi-round review with core Apicurio maintainers.",
     tech: ["Java", "Quarkus", "Vert.x", "JUnit 5", "SmallRye Fault Tolerance"],
@@ -510,7 +510,7 @@ export const apicurioProjects = [
     id: "apicurio-pr-4",
     title: "PR #8668: fix(cli): enhance default group handling and null-safe date conversions",
     organization: "Apicurio Registry",
-    shortDesc: "Fixed CLI inconsistencies with the implicit default group — display normalization, CRUD guards, and null-safe conversions.",
+    shortDesc: "Fixed CLI inconsistencies with the implicit default group display normalization, CRUD guards, and null-safe conversions.",
     fullDesc:
       "The Apicurio Registry CLI had multiple inconsistencies around the implicit default group. Output tables showed blank spaces instead of 'default' for the group ID and CRUD operations on the default group attempted direct API calls that the server rejects with a 404. Fixed by centralizing the default-group check in IdUtil.isDefaultGroup and displayGroupId, guarding all four group commands against operations on the implicit group, and normalizing display output across ArtifactCommand, VersionCommand, SearchUtil, and several other commands. Added null-safe date conversions in Conversions.java. Went through a rigorous 8-finding code review from Eric Wittmann with all findings addressed. A follow-up E2E review from a maintainer who tested against a live registry with Podman surfaced additional improvements shipped in a subsequent PR.",
     tech: ["Java", "Quarkus", "CLI", "Picocli"],

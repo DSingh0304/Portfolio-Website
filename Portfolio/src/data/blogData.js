@@ -1,7 +1,7 @@
-import hostel from "../assets/HostelAllocationSystem.png";
+import hostel from "../assets/HostelAllocationSystem.webp";
 import { twitterArchive } from "./twitterArchiveData";
 
-const iitgSummerSchoolImage = "/icons_experience/IITG.png";
+const iitgSummerSchoolImage = "/icons_experience/IITG.webp";
 
 export const blogPosts = [
   {
@@ -10,24 +10,24 @@ export const blogPosts = [
     date: "2026-09-04",
     time: "08:00 PM",
     content:
-      "Sharing a progress update on my LeetCode journey. Consistency has been the key — showing up daily, grinding through data structures and algorithms, and building the habit of structured problem-solving.\n\n" +
-      "Every problem solved is another pattern internalized. The focus is on understanding concepts deeply rather than just chasing numbers — trees, graphs, dynamic programming, sliding window — working through them methodically.\n\n" +
+      "Sharing a progress update on my LeetCode journey. Consistency has been the key showing up daily, grinding through data structures and algorithms, and building the habit of structured problem-solving.\n\n" +
+      "Every problem solved is another pattern internalized. The focus is on understanding concepts deeply rather than just chasing numbers trees, graphs, dynamic programming, sliding window working through them methodically.\n\n" +
       "The grind continues.",
-    images: ["/icons_experience/LC Update.png"],
+    images: ["/icons_experience/LC Update.webp"],
     tags: ["dsa", "leetcode", "consistency", "learning"],
     createdAt: "2026-09-04T14:00:00.000Z",
   },
   {
     id: 7,
-    title: "Targeting LFX Mentorship under Apicurio Registry — Webhooks Project",
+    title: "Targeting LFX Mentorship under Apicurio Registry Webhooks Project",
     date: "2026-08-02",
     time: "10:00 PM",
     content:
       "Registrations for the LFX Mentorship program open tomorrow, and I am planning to apply.\n\n" +
-      "I have been contributing to Apicurio Registry over the past few weeks — fixing webhook delivery bugs, working through thorough code reviews with the maintainers, and picking up a solid understanding of how the registry's event and storage layers are designed. The experience has been genuinely valuable, and I want to go deeper.\n\n" +
-      "The project I am targeting is the Webhooks project under Apicurio Registry. Webhooks are at the center of how the registry propagates events externally, and there is meaningful work to be done there. My existing contributions in that exact part of the codebase — specifically fixing how HttpClientService handles 2xx responses and interrupt propagation during webhook delivery — feel like a natural setup for this.\n\n" +
+      "I have been contributing to Apicurio Registry over the past few weeks fixing webhook delivery bugs, working through thorough code reviews with the maintainers, and picking up a solid understanding of how the registry's event and storage layers are designed. The experience has been genuinely valuable, and I want to go deeper.\n\n" +
+      "The project I am targeting is the Webhooks project under Apicurio Registry. Webhooks are at the center of how the registry propagates events externally, and there is meaningful work to be done there. My existing contributions in that exact part of the codebase specifically fixing how HttpClientService handles 2xx responses and interrupt propagation during webhook delivery feel like a natural setup for this.\n\n" +
       "Registrations open tomorrow. I have done the prep work, I know the codebase, and I am genuinely excited about the direction. Let's see what happens.",
-    images: ["/icons_experience/apicurio.png"],
+    images: ["/icons_experience/apicurio.webp"],
     tags: ["lfx", "mentorship", "opensource", "apicurio"],
     createdAt: "2026-08-02T22:00:00.000Z",
   },
@@ -40,7 +40,7 @@ export const blogPosts = [
       "I recently completed 200 coding questions and wanted to mark the milestone properly. More than the number itself, the real value came from building consistency, improving problem-solving speed, and learning to stay calm when a solution was not obvious right away.\n\n" +
       "I shared the milestone on LinkedIn because it felt important to document the progress publicly and keep myself accountable for what comes next. The goal was never just to chase a number; it was to build a stronger foundation in data structures, algorithms, and the habit of showing up every day.\n\n" +
       "This is one of those checkpoints that reminds me that steady effort compounds.",
-    images: ["/icons_experience/Leetcode.png"],
+    images: ["/icons_experience/Leetcode.webp"],
     tags: ["dsa", "consistency", "milestone", "learning"],
     createdAt: "2026-07-02T15:30:00.000Z",
   },
@@ -53,7 +53,7 @@ export const blogPosts = [
       "I wrote a Medium blog about BalanceEngine, a production-grade double-entry ledger and balance engine inspired by real fintech systems. The project is built around immutable balanced debit and credit entries, with balances computed dynamically instead of being stored as a mutable column.\n\n" +
       "The write-up covers the parts that made this project interesting to build: PostgreSQL-level immutability through triggers, deterministic locking to keep concurrent transfers safe, Redis-backed idempotency for exactly-once processing, and real-time updates without polluting the core transaction flow.\n\n" +
       "It was one of the most satisfying projects I have worked on because it combined backend design, correctness, and real-world product thinking in one system. You can read the full article on my Medium profile.",
-    images: ["/icons_experience/BE.png"],
+    images: ["/icons_experience/BE.webp"],
     tags: ["medium", "fintech", "systemdesign", "backend"],
     externalUrl: "https://medium.com/@deepshekhar0306/how-financial-systems-handle-transactions-4816423f9e32",
     createdAt: "2026-07-02T14:15:00.000Z",
