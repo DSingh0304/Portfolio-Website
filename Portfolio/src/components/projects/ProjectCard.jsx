@@ -17,7 +17,7 @@ const getYouTubeEmbedUrl = (url) => {
         return `https://www.youtube.com${parsed.pathname}`;
       }
     }
-  } catch (error) {
+  } catch {
     return url;
   }
   return url;
@@ -87,7 +87,7 @@ const ProjectCard = ({ project }) => {
             <button
               type="button"
               onClick={() => setShowVideo(true)}
-              className="inline-block w-24 text-center text-sm px-3 py-2 border border-purple hover:text-white transition-colors"
+              className="inline-block w-24 text-center text-sm px-3 py-2 border border-purple cursor-pointer hover:text-white transition-colors"
             >
               Video
             </button>
