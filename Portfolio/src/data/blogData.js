@@ -5,6 +5,20 @@ const iitgSummerSchoolImage = "/icons_experience/IITG.webp";
 
 export const blogPosts = [
   {
+    id: 9,
+    title: "Building VibeSync: A Real-Time Synchronized Music Streaming App",
+    date: "2026-10-06",
+    time: "10:00 AM",
+    content:
+      "I recently built VibeSync, an Android project using React Native. It's a real-time music listening party application where users can join rooms and listen to YouTube tracks together.\n\n" +
+      "Building a real-time application is always a challenge, but when that application involves synchronizing audio playback across multiple devices down to the millisecond, the complexity multiplies. The backend is built with Node.js, Express, and Socket.io, acting as the authoritative source of truth. We used a Coordinated Start Lead Time for millisecond-perfect synchronization, and yt-dlp running as a child process for secure audio extraction.\n\n" +
+      "I also had to implement resilient state management with automatic host migration if a user drops connection, and smart proxy routing to protect API quotas. You can read the full deep-dive on my Medium profile.",
+    images: ["/icons_experience/VibeSync.webp"],
+    tags: ["android", "reactnative", "socketio", "nodejs", "backend", "medium"],
+    externalUrl: "https://medium.com/@deepshekhar0306/building-vibesync-the-engineering-behind-a-real-time-synchronized-music-streaming-backend-b8469ae982c7",
+    createdAt: "2026-10-06T10:00:00.000Z",
+  },
+  {
     id: 8,
     title: "LeetCode Progress Update",
     date: "2026-09-04",

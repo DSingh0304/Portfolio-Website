@@ -54,6 +54,23 @@ export const bigProjects = [
     featured: true,
     smallProject: false,
   },
+  {
+    id: "vibesync",
+    title: "VibeSync",
+    shortDesc: "A real-time music listening party application for synchronized audio playback.",
+    fullDesc:
+      "VibeSync is a real-time music listening party application where users can join rooms and listen to YouTube tracks together. Built with a Node.js and Socket.io backend, it acts as the authoritative source of truth for all rooms. It features millisecond-perfect synchronization utilizing a Coordinated Start Lead Time and NTP-style time authority. Direct audio streams are extracted securely using yt-dlp. It also features a resilient in-memory state management with host migration and a smart proxy layer to protect third-party API quotas.",
+    tech: ["Node.js", "Express", "Socket.io", "React Native", "Android", "yt-dlp"],
+    tags: ["fullstack", "real-time", "android", "socket-io", "audio-streaming"],
+    repoUrl: "https://github.com/DSingh0304/SongSync",
+    blogUrl: "https://medium.com/@deepshekhar0306/building-vibesync-the-engineering-behind-a-real-time-synchronized-music-streaming-backend-b8469ae982c7",
+    liveUrl: null,
+    videoUrl: null,
+    createdAt: "October 2026",
+    image: "/icons_experience/VibeSync.webp",
+    featured: true,
+    smallProject: false,
+  },
 ];
 
 export const smallProject = [
