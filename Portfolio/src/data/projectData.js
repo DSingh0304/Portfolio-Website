@@ -64,7 +64,7 @@ export const bigProjects = [
     tags: ["fullstack", "real-time", "android", "socket-io", "audio-streaming"],
     repoUrl: "https://github.com/DSingh0304/SongSync",
     blogUrl: "https://medium.com/@deepshekhar0306/building-vibesync-the-engineering-behind-a-real-time-synchronized-music-streaming-backend-b8469ae982c7",
-    liveUrl: null,
+    liveUrl: "https://drive.google.com/file/d/1FA0mBE25YRXxAAslqTAAnvB6M5qQ7NPe/view?usp=sharing",
     videoUrl: null,
     createdAt: "October 2026",
     image: "/icons_experience/VibeSync.webp",
