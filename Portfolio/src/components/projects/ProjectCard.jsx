@@ -51,6 +51,20 @@ const ProjectCard = ({ project }) => {
         className="w-full object-cover border border-2 border-gray-500"
         loading="lazy"
       />
+      {liveUrl && (
+        <a
+          href={liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="absolute top-3 right-3 z-20 flex items-center gap-2.5 bg-[#c778dd] text-[#282c33] font-bold text-sm px-4 py-2 shadow-lg hover:brightness-110 hover:scale-105 transition-all"
+        >
+          <span className="relative flex h-2.5 w-2.5">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#282c33] opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#282c33]"></span>
+          </span>
+          Live
+        </a>
+      )}
       <p className="p-2 border border-2 border-gray-500 text-xs sm:text-sm text-gray-400 font-semibold mb-2">
         {tech.join(" ")}
       </p>
@@ -72,15 +86,6 @@ const ProjectCard = ({ project }) => {
               className="inline-block w-24 text-center text-sm px-3 py-2 border border-purple hover:text-white transition-colors"
             >
               Repo {">>"}
-            </a>
-          )}
-          {liveUrl && (
-            <a
-              href={liveUrl}
-              target="_blank"
-              className="inline-block w-24 text-center text-sm px-3 py-2 border border-purple hover:text-white transition-colors"
-            >
-              Live {">>"}
             </a>
           )}
           {videoUrl && (
