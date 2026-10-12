@@ -256,15 +256,17 @@ const BlogPage = () => {
                     aria-label={`Open ${getPostTitle(post)}`}
                   >
                     {post.images && post.images.length > 0 && (
-                      <img
-                        src={post.images[0]}
-                        alt={`${getPostTitle(post)} cover`}
-                        className={`w-full ${coverHeightClass} object-cover border-b border-gray-700`}
-                        loading="lazy"
-                        onError={(e) => {
-                          e.target.style.display = "none";
-                        }}
-                      />
+                      <div className={`w-full ${coverHeightClass} overflow-y-auto border-b border-gray-700 bg-[#1e222b]`}>
+                        <img
+                          src={post.images[0]}
+                          alt={`${getPostTitle(post)} cover`}
+                          className="w-full h-auto min-h-full object-cover block"
+                          loading="lazy"
+                          onError={(e) => {
+                            e.target.style.display = "none";
+                          }}
+                        />
+                      </div>
                     )}
                     <div className="p-4 flex flex-col h-full">
                       <div className="flex items-center justify-between text-gray-400 text-xs mb-2">
@@ -311,14 +313,16 @@ const BlogPage = () => {
             aria-modal="true"
           >
             {activePost.images && activePost.images.length > 0 && (
-              <img
-                src={activePost.images[0]}
-                alt={`${getPostTitle(activePost)} cover`}
-                className="w-full h-auto object-contain border-b border-gray-700 rounded-t-xl"
-                onError={(e) => {
-                  e.target.style.display = "none";
-                }}
-              />
+              <div className="w-full max-h-[350px] sm:max-h-[420px] overflow-y-auto border-b border-gray-700 rounded-t-xl bg-[#1e222b]">
+                <img
+                  src={activePost.images[0]}
+                  alt={`${getPostTitle(activePost)} cover`}
+                  className="w-full h-auto object-contain block"
+                  onError={(e) => {
+                    e.target.style.display = "none";
+                  }}
+                />
+              </div>
             )}
             <div className="p-6">
               <div className="flex items-start justify-between gap-4 text-gray-400 text-sm mb-4">
@@ -354,7 +358,13 @@ const BlogPage = () => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-4 py-2 border border-purple font-semibold rounded hover:bg-purple hover:text-white transition-colors mb-6"
                 >
-                  Read on Medium &rarr;
+                  {activePost.externalLabel
+                    ? `Read on ${activePost.externalLabel} \u2192`
+                    : activePost.externalUrl.includes("medium.com")
+                    ? "Read on Medium \u2192"
+                    : activePost.externalUrl.includes("builder.aws")
+                    ? "Read on AWS Builder \u2192"
+                    : "Read Article \u2192"}
                 </a>
               )}
 

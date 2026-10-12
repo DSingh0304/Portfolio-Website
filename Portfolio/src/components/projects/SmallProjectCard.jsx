@@ -36,6 +36,7 @@ const SmallProjectCard = ({ project }) => {
             <a
               href={repoUrl}
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-block w-28 text-center text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
             >
               Repo {">>"}
@@ -45,6 +46,7 @@ const SmallProjectCard = ({ project }) => {
             <a
               href={project.liveUrl}
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-block w-28 text-center text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
             >
               Live {">>"}
@@ -57,7 +59,7 @@ const SmallProjectCard = ({ project }) => {
               rel="noopener noreferrer"
               className="inline-block w-28 text-center text-sm px-4 py-2 border border-purple hover:text-white transition-colors"
             >
-              Medium
+              {project.blogLabel || (blogUrl.includes("medium.com") ? "Medium" : "Blog")}
             </a>
           )}
         </div>

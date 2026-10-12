@@ -1,9 +1,30 @@
 import hostel from "../assets/HostelAllocationSystem.webp";
+import ebroker from "../assets/e-broker.webp";
 import { twitterArchive } from "./twitterArchiveData";
 
 const iitgSummerSchoolImage = "/icons_experience/IITG.webp";
 
 export const blogPosts = [
+  {
+    id: 10,
+    title: "E-Broker: ML + Agentic Full-Stack System for WeMakeDevs Amazon Hackathon",
+    date: "2026-10-12",
+    time: "12:00 PM",
+    content:
+      "I built E-Broker for the WeMakeDevs Amazon Hackathon — an end-to-end ML, Agentic AI, and Full-Stack platform designed to transform India's 3.2 million metric tonne e-waste crisis into a safety net.\n\n" +
+      "Informal e-waste handling is disastrous: less than 5% reaches certified recyclers, while the rest is burned and acid-stripped informally in residential backyards, releasing deadly carcinogens (dioxins, lead, cadmium). E-Broker moves the critical safety, fair pricing, and EPR compliance warnings right to the doorstep before scrap changes hands.\n\n" +
+      "Core Architecture & Engineering Highlights:\n" +
+      "• Machine Learning (ML): Fine-tuned YOLO26m computer vision model trained on 9 unified classes (mAP50 0.802) for real-time e-waste component detection directly from smartphone camera feeds.\n" +
+      "• Agentic AI: Amazon Bedrock (Nova Pro) multi-tool reasoning agent that calculates dynamic price bands from live market data, enforces strict chemical toxicity warnings and safe-handling protocols, drafts digital EPR passports, and geo-matches certified CPCB recyclers.\n" +
+      "• Full Stack on AWS: Built with a Next.js 14 frontend, FastAPI backend containerized on AWS Lambda, Amazon SageMaker for serverless inference, RDS PostgreSQL single schema with JSONB bounding boxes, and EventBridge automated retraining loops with regression gates.\n\n" +
+      "The full architecture and build breakdown is published on the AWS Builder Center. Check out the project demo and GitHub repository below!",
+    images: [ebroker],
+    tags: ["hackathon", "wemakedevs", "aws", "machinelearning", "agentic-ai", "fullstack"],
+    externalUrl:
+      "https://builder.aws.com/post/3KYIkO4vE3tGK55OD5jmCijXnWC_p/e-broker-the-ai-agent-that-turns-indias-e-waste-crisis-into-a-safety-net",
+    externalLabel: "AWS Builder Center",
+    createdAt: "2026-10-12T12:00:00.000Z",
+  },
   {
     id: 9,
     title: "Building VibeSync: A Real-Time Synchronized Music Streaming App",

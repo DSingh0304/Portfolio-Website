@@ -154,15 +154,17 @@ const BlogSection = ({ limit = 3 }) => {
               aria-label={`Open ${getPostTitle(post)} in blog`}
             >
               {post.images && post.images.length > 0 && (
-                <img
-                  src={post.images[0]}
-                  alt={`${getPostTitle(post)} cover`}
-                  className={`w-full ${coverHeightClass} object-cover border-b border-gray-700`}
-                  loading="lazy"
-                  onError={(e) => {
-                    e.target.style.display = "none";
-                  }}
-                />
+                <div className={`w-full ${coverHeightClass} overflow-y-auto border-b border-gray-700 bg-[#1e222b]`}>
+                  <img
+                    src={post.images[0]}
+                    alt={`${getPostTitle(post)} cover`}
+                    className="w-full h-auto min-h-full object-cover block"
+                    loading="lazy"
+                    onError={(e) => {
+                      e.target.style.display = "none";
+                    }}
+                  />
+                </div>
               )}
               <div className="p-4 flex flex-col h-full">
                 <div className="flex items-center justify-between text-gray-400 text-xs mb-2">

@@ -88,7 +88,7 @@ img {
 }
 
 /* Custom premium scrollbar matching OneDark theme */
-html {
+html, * {
   scrollbar-width: thin;
   scrollbar-color: #3e4451 #1e222b;
 }

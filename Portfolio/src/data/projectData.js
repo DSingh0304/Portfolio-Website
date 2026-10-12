@@ -1,8 +1,38 @@
 import dhanvantri from "../assets/dhanvantri.webp";
 import streamify from "../assets/streamify.webp";
 import hostel from "../assets/HostelAllocationSystem.webp";
+import ebroker from "../assets/e-broker.webp";
 
 export const bigProjects = [
+  {
+    id: "e-broker",
+    title: "E-Broker",
+    shortDesc:
+      "An ML + Agentic full-stack marketplace built for the WeMakeDevs Amazon Hackathon turning e-waste scrap photos into pricing, toxicity warnings, and EPR compliance on AWS.",
+    fullDesc:
+      "Built for the WeMakeDevs Amazon Hackathon, E-Broker is an end-to-end ML, Agentic AI, and full-stack marketplace tackling India's 3.2M metric tonne e-waste crisis. A kabadiwala photographs scrap, YOLO26 identifies components, an Amazon Bedrock agent prices materials, warns on carcinogenic toxicity (dioxins, lead, cadmium), drafts EPR passports, and matches certified recyclers in real time — moving safety warnings to the doorstep before scrap changes hands.\n\nKey engineering highlights: Serverless containerized architecture on AWS Lambda with FastAPI, Amazon Bedrock (Nova Pro) for multi-tool agentic reasoning and toxicity scoring, SageMaker for YOLO26m inference (mAP50 0.802), RDS PostgreSQL single schema with JSONB bounding boxes, and an automated continuous learning loop with regression gates for model promotions.",
+    tech: [
+      "Next.js",
+      "FastAPI",
+      "Amazon Bedrock",
+      "SageMaker",
+      "AWS Lambda",
+      "YOLO26",
+      "PostgreSQL",
+      "Docker",
+    ],
+    tags: ["agentic-ai", "aws", "fullstack", "hackathon", "computer-vision", "llm"],
+    repoUrl: "https://github.com/DSingh0304/e-broker/tree/main",
+    liveUrl: "https://e-broker.ysinghc.in/",
+    videoUrl: null,
+    blogUrl:
+      "https://builder.aws.com/post/3KYIkO4vE3tGK55OD5jmCijXnWC_p/e-broker-the-ai-agent-that-turns-indias-e-waste-crisis-into-a-safety-net",
+    blogLabel: "AWS Blog",
+    createdAt: "October 2026",
+    image: ebroker,
+    featured: true,
+    smallProject: false,
+  },
   {
     id: "payagent-core",
     title: "PayAgent",

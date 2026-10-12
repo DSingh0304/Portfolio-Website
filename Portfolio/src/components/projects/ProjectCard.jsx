@@ -45,12 +45,14 @@ const ProjectCard = ({ project }) => {
       key={id}
       className="border-2 border-gray-700 bdr transition-colors rounded-md overflow-hidden relative"
     >
-      <img
-        src={image}
-        alt={`${title} thumbnail`}
-        className="w-full object-cover border border-2 border-gray-500"
-        loading="lazy"
-      />
+      <div className="h-48 sm:h-52 overflow-y-auto border-b-2 border-gray-500 bg-[#1e222b]">
+        <img
+          src={image}
+          alt={`${title} thumbnail`}
+          className="w-full h-auto min-h-full object-cover block"
+          loading="lazy"
+        />
+      </div>
       {liveUrl && (
         <a
           href={liveUrl}
@@ -83,6 +85,7 @@ const ProjectCard = ({ project }) => {
             <a
               href={repoUrl}
               target="_blank"
+              rel="noopener noreferrer"
               className="inline-block w-24 text-center text-sm px-3 py-2 border border-purple hover:text-white transition-colors"
             >
               Repo {">>"}
@@ -104,7 +107,7 @@ const ProjectCard = ({ project }) => {
               rel="noopener noreferrer"
               className="inline-block w-24 text-center text-sm px-3 py-2 border border-purple hover:text-white transition-colors"
             >
-              Medium
+              {project.blogLabel || (blogUrl.includes("medium.com") ? "Medium" : "Blog")}
             </a>
           )}
         </div>
